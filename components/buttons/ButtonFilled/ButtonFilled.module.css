@@ -1,0 +1,16 @@
+.button{
+    border-radius: 12px;
+    border-width: 5px;
+    padding-left: 36px;
+    padding-right: 36px;
+    font-weight: 600;
+    font-size: 18px;
+    height: 54px;
+    color: var(--black);
+    background-color: var(--orange);
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    box-sizing: border-box;
+    filter: var(--orangeDropShadow)
+}

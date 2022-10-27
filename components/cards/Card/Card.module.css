@@ -1,0 +1,6 @@
+.container{
+    padding: 24px;
+    border-radius: 16px;
+    background-color: var(--orangeLight);
+    filter: var(--orangeDropShadow)
+}

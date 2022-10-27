@@ -1,0 +1,125 @@
+.container{
+    padding: 32px;
+    min-height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100px 1fr;
+    background-image: url('../public/background-one-desktop.svg');
+    background-color: var(--black);
+    /* background-size: 100% auto; */
+    background-position: top right;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+}
+
+.headerText{
+    font-size: 48px;
+    margin-left: 24px;
+    color: var(--white)
+}
+
+.left{
+    padding-top: 48px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card{
+    width: 80%;
+}
+
+.cardHeader{
+    color: var(--black);
+    font-size: 32px;
+    margin: 0px;
+}
+
+.cardText{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.iconButtonContainer{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.right{
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+}
+.form{
+    height: 100%;
+    width: 90%;
+    background-color: var(--black);
+    border: 5px solid var(--orange);
+    border-radius: 16px;
+    padding: 24px;
+    filter: var(--orangeDropShadow);
+}
+
+.input{
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.message{
+    height: 200px;
+    margin-bottom: 16px;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        transform: translateX(-32px);
+    }
+    .iconButtonContainer{
+        margin-top: 24px;
+    }
+    .card{
+        max-width: 600px;
+        width: 90vw
+    }
+    .form{
+        max-width: 600px;
+        width: 90vw
+    }
+    .headerText{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .header {
+        transform: translateX(-24px);
+    }
+    .headerText{
+        font-size: 36px;
+    }
+    .planet{
+        height: 84px;
+        width: 84px;
+    }
+}
+@media screen and (max-width: 390px) {
+    .planet {
+        height: 72px;
+        width: 72px;
+    }
+    .headerText {
+        font-size: 32px;
+    }
+}
