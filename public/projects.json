@@ -1,0 +1,57 @@
+[
+    {
+        "id": 23452347,
+        "title": "Heron",
+        "description": "A mobile fishing companion",
+        "thumbnail":  "https://julian-hahn-portfolio.s3.amazonaws.com/heron-thumbnail.png",
+        "github": "https://github.com/jhahn678/Heron-Expo",
+        "tags": [
+            "React Native",
+            "TypeScript",
+            "Node",
+            "GraphQL",
+            "AWS",
+            "PostgreSQL",
+            "Postgis"
+        ]
+    },
+    {
+        "id": 845676234,
+        "title": "Mountain Trout Fly Co.",
+        "description": "Online fly shop & ecommerce system",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-shop-thumbnail.png",
+        "github": "https://github.com/jhahn678/MTFC",
+        "tags": [
+            "React",
+            "Node",
+            "MongoDB",
+            "Google Cloud"
+        ]
+    },
+    {
+        "id": 6345135,
+        "title": "Mountain Trout Blog",
+        "description": "A fly fishing blog platform",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-blog-thumbnail.png",
+        "github": "https://github.com/jhahn678/MTFC-Blog",
+        "tags": [
+            "React",
+            "Next.js",
+            "Contentful",
+            "Stripe",
+            "MongoDB"
+        ]
+    },
+    {
+        "id": 6367435,
+        "title": "Heron-mobile.com",
+        "description": "Mobile application landing page",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/heron-thumbnail.png",
+        "github": "https://github.com/jhahn678/heron-website",
+        "tags": [
+            "React",
+            "Next.js",
+            "AWS"
+        ]
+    }
+]
