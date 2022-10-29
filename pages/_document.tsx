@@ -1,5 +1,6 @@
 import { createGetInitialProps } from '@mantine/next';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Footer from '../components/layout/footer/Footer';
 
 const getInitialProps = createGetInitialProps();
 
@@ -10,7 +11,6 @@ export default class _Document extends Document {
     return (
       <Html>
         <Head>
-          <title>Julian Hahn</title>
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
           <link rel="icon" href="/favicon.png" />
         </Head>
