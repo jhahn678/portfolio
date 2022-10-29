@@ -1,0 +1,69 @@
+.container {
+    height: 54px;
+    width: 250px;
+    padding: 10px 12px;
+    position: relative;
+    border: 5px solid var(--orange);
+    border-radius: 12px;
+    background-color: var(--black);
+    transition: .2s ease-out all;
+    cursor: pointer;
+    overflow: hidden;
+    filter: var(--orangeDropShadow);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.label {
+    margin: 0;
+    color: var(--orangeLight);
+    background-color: var(--black);
+    font-weight: 600;
+    font-family: Montserrat, 'sans-serif';
+    font-size: 16px;
+}
+
+.divider{
+    height: 3px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: var(--orangeLight);
+}
+
+.icon{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    cursor: pointer;
+}
+.option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.optionLabel{
+    width: 100%;
+    margin: 0;
+    padding: 8px 0;
+    color: var(--orangeLight);
+    font-weight: 500;
+    font-family: Montserrat, 'sans-serif';
+    font-size: 16px;
+}
+
+.optionContainer{
+    padding-top: 8px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.optionContainer::-webkit-scrollbar {
+    width: 8px;
+}
+.optionContainer::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+}
+.optionContainer::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.2);
+    border-radius: 5px;
+}

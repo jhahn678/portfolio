@@ -1,0 +1,21 @@
+.chip{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 12px;
+    padding-right: 24px;
+    background-color: var(--orangeLight);
+    filter: var(--orangeDropShadow);
+    border-radius: 12px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.label{
+    font-weight: 600;
+    margin: 0;
+}
+
+.x{
+    margin-right: 4px
+}
