@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from './ProjectCard.module.css'
 import { motion } from 'framer-motion'
 import { IoLogoGithub } from 'react-icons/io'
+import router from "next/router";
 
 export interface IProject {
   id: number,
@@ -40,6 +41,7 @@ const ProjectCard = ({ data }: Props) => {
       className={styles.container} 
       style={{ backgroundImage: `url("${data.thumbnail}")` }}
       whileHover={{ scale: 1.02 }} whileTap={{ scale: .98 }}
+      onClick={() => router.push(`/project/${data.id}`)}
       onHoverStart={() => setHovering(true)}
       onHoverEnd={() => setHovering(false)}
     >

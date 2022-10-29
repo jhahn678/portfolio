@@ -41,7 +41,6 @@
     font-family: Montserrat, 'sans-serif';
     font-size: 16px;
 }
-.icon{}
 .divider{
     height: 2px;
     width: 100%;
@@ -89,6 +88,7 @@
     color: var(--orangeLight);
     font-weight: 500;
     padding-left: 4px;
+    margin-top: 14px;
 }
 
 @media screen and (max-width: 600px) {
@@ -97,9 +97,6 @@
     }
     .input{
         width: calc(100vw - 32px)
-    }
-    .placeholder{
-        margin: 8px 0;
     }
     .container{
         gap: 16px;

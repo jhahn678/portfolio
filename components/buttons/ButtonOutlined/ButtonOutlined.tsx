@@ -4,6 +4,7 @@ import { motion, MotionProps } from "framer-motion";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
     hoverScale?: number
+    height?: number
 }
 
 const ButtonOutlined = ({ className, children, hoverScale=1.05, ...props}: Props) => {
@@ -16,6 +17,7 @@ const ButtonOutlined = ({ className, children, hoverScale=1.05, ...props}: Props
         }}
         whileTap={{ scale: .98 }}
         className={`${styles.button} ${className}`} 
+        style={{ height: props.height }}
         {...props}>
             {children}
         </motion.button>

@@ -6,6 +6,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
     hoverScale?: number,
     disableHoverColor?: true
     disableHover?: true
+    height?: number
 }
 
 const ButtonFilled = ({ children, className, hoverScale=1.05, ...props}: Props) => {
@@ -21,6 +22,7 @@ const ButtonFilled = ({ children, className, hoverScale=1.05, ...props}: Props) 
             scale: .98 
         }}
         className={`${styles.button} ${className}`} 
+        style={{ height: props.height }}
         {...props}>
             {children}
         </motion.button>
