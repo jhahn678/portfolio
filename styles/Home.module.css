@@ -1,95 +1,98 @@
-.container{
+.landing{
   width: 100vw;
-  display: flex;
-  flex-direction: column;
+  height: 100vh;
+  padding: 32px;
+  display: grid;
+  grid-template-columns: 5fr 4fr;
   background-image: url('../public/landing-page-background-desktop.svg');
   background-color: var(--black);
   background-position: top right;
 }
-.main{
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 32px;
+.header {
+  height: 100px;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 16px;
+}
+.planet {
+  margin-right: 16px;
 }
 .left{
-  flex: 1;
-  max-width: 50vw;
-  box-sizing: border-box;
-  margin-left: 5vw;
-  margin-right: 5vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.mainText{
+.CTAgroup{
+  align-self: center;
+}
+.mainText {
+  margin-left: 24px;
   max-width: 500px;
   font-size: 48px;
   font-weight: 600;
   color: var(--white);
 }
-.textGradient{
+
+.textGradient {
   background: var(--orangeGradient);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: var(--orangeShadow)
 }
+
 .CTA {
   margin-right: 24px;
   margin-bottom: 24px;
 }
-.scrollDownButton{
-  position: absolute;
-  bottom: 5vh;
+
+.scrollDownButton {
+  width: min-content;
 }
 
-.buttonContainer{
+.buttonContainer {
+  margin-left: 24px;
   display: flex;
 }
-.planet {
-  position: absolute;
-  top: 24px;
-  left: 24px
-}
-
-.right{
+.right {
+  margin-top: 5vh;
   box-sizing: border-box;
   position: relative;
   height: 80vh;
-  width: 45vw;
+  display: flex;
+  align-items: center;
 }
 
+
 @media screen and (min-width: 1500px) {
-  .container {
+  .landing {
     background-size: 100% auto;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .right{
-    width: 35vw;
-    margin-right: 5vw
-  }
-}
-
-@media screen and (max-width: 950px) {
-  .main{
-    justify-content: center;
-    padding: 24px;
-  }
-  .mainText {
-    text-align: center;
-  }
-  .left{
-    max-width: unset;
+@media screen and (max-width: 1000px) {
+  .landing{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transform: none;
   }
-  .right {
+  .header{
+    transform: translateX(-16px);
+  }
+  .right{
     display: none;
+  }
+  .left{
+    height: 100vh;
+    align-items: center;
+  }
+  .mainText {
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+  .buttonContainer {
+    justify-content: center;
+    margin-left: 0;
   }
 }
 
@@ -105,13 +108,27 @@
   .CTA{
     margin-right: 0px;
   }
+  .header{
+    transform: unset;
+  }
+  .planet {
+    height: 84px;
+    width: 84px;
+    margin-right: 8px;
+  }
 }
 
 @media screen and (max-width: 450px) {
-  .mainText {
-    text-align: left;
+  .planet {
+    display: none;
   }
-  .container {
-    padding: 16px;
+  .header{
+    height: 84px;
+  }
+}
+
+@media screen and (max-height: 750px) and (max-width: 450px) {
+  .mainText {
+    font-size: 32px;
   }
 }
