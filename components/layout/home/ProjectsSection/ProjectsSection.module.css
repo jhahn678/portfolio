@@ -1,0 +1,126 @@
+.container {
+    width: 100vw;
+    padding-top: 64px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../../../../public/background-one-desktop.svg');
+    background-color: var(--black);
+    background-position: top right;
+    background-repeat: repeat;
+}
+.header {
+    padding-left: 32px;
+    display: flex;
+    align-items: center;
+}
+.headerText {
+    margin: 0;
+    font-size: 48px;
+    margin-left: 24px;
+    color: var(--white)
+}
+.filterSection{
+    position: relative;
+    z-index: 100;
+    height: 70px;
+    margin-top: 24px;
+    margin-left: 40px;
+    padding-left: 274px;
+    display: flex;
+    align-items: flex-start;
+}
+.select{
+    width: 250px;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+}
+.chip{
+    margin-top: 2px
+}
+.placeholder{
+    font-style: italic;
+    color: var(--orangeLight);
+    font-weight: 500;
+    padding-left: 4px;
+}
+.chipContainer{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    gap: 24px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+    row-gap: 32px;
+    padding: 24px 40px;
+}
+
+@media screen and (max-width: 900px) {  
+    .grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header{
+        padding-left: 24px
+    }
+    .filterSection{
+        margin-left: 24px;
+    }
+}
+@media screen and (max-width: 600px){
+    .header{
+        margin-bottom: 24px;
+    }
+    .headerText{
+        background-color: var(--black);
+        border-radius: 100%;
+    }
+    .filterSection {
+        width: calc(100% - 48px);
+        height: 132px;
+        padding-left: 0px;
+    }
+    .chip{
+        margin-top: 0;
+    }
+    .placeholder {
+        transform: translateY(-4px);
+    }
+    .chipContainer{
+        margin-top: 78px;
+        gap: 16px;
+    }
+    .select {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 550px) {
+    .container{
+        padding-top: 32px;
+    }
+    .header {
+        padding-left: 16px
+    }
+    .planet{
+        height: 84px;
+        width: 84px;
+    }
+    .headerText {
+        font-size: 40px;
+        margin-left: 16px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .planet {
+        height: 72px;
+        width: 72px;
+    }
+    .headerText {
+        font-size: 36px;
+    }
+}
