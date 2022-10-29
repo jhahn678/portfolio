@@ -16,7 +16,10 @@ const ButtonFilled = ({ children, className, hoverScale=1.05, ...props}: Props) 
                 scale: hoverScale, 
                 backgroundColor: props.disableHoverColor ? undefined : 'var(--orangeLight)' 
             }}
-        whileTap={{ backgroundColor: 'var(--orange)' }}
+        whileTap={{ 
+            backgroundColor: 'var(--orange)', 
+            scale: .98 
+        }}
         className={`${styles.button} ${className}`} 
         {...props}>
             {children}

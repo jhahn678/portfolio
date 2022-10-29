@@ -10,7 +10,7 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
 const ScrollDownButton = ({iconSize=36, className, ...props}: Props) => {
   return (
     <motion.button 
-        {...props}
+        {...props} whileTap={{ scale: .98 }}
         className={`${styles.container} ${className}`} 
         whileHover={{ scale: 1.05, cursor: 'pointer' }}
     >

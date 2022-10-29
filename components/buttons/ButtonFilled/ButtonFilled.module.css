@@ -10,6 +10,7 @@
     background-color: var(--orange);
     border: 0;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     font-family: inherit;
     box-sizing: border-box;
     filter: var(--orangeDropShadow)

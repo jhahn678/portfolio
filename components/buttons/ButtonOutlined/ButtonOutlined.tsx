@@ -9,7 +9,12 @@ type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
 const ButtonOutlined = ({ className, children, hoverScale=1.05, ...props}: Props) => {
     return (
         <motion.button 
-        whileHover={{ scale: hoverScale, borderColor: 'var(--orangeLight)', color: 'var(--orangeLight)' }}
+        whileHover={{ 
+            scale: hoverScale, 
+            borderColor: 'var(--orangeLight)', 
+            color: 'var(--orangeLight)' 
+        }}
+        whileTap={{ scale: .98 }}
         className={`${styles.button} ${className}`} 
         {...props}>
             {children}

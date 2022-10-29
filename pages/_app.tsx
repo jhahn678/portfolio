@@ -2,6 +2,8 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
+import Footer from '../components/layout/footer/Footer';
+import Modal from '../components/modal/Modal';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +22,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         <NotificationsProvider>
           <Component {...pageProps} />
+          <Footer/>
+          <Modal/>
         </NotificationsProvider>
       </MantineProvider>
   )
