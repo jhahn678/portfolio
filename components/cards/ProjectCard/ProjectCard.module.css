@@ -73,3 +73,9 @@
         width: calc(100vw - 48px);
     }
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: calc(100vw - 32px);
+    }
+}

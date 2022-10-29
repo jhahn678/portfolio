@@ -11,7 +11,7 @@ export interface Options{
 
 interface Props {
     label: string
-    options: (Options | string)[]
+    options: ({ value: string, label?: string} | string)[]
     values: string[]
     setValues: React.Dispatch<React.SetStateAction<string[]>>
     className?: string
@@ -62,7 +62,7 @@ const Select = ({ values, setValues, ...props}: Props) => {
         <motion.div 
             ref={ref} onClick={handleClick}
             className={`${styles.container} ${props.className}`}
-            whileHover={{ borderColor: 'var(--orangeLight)'}}
+            whileHover={{ borderColor: 'var(--orangeLight)' }}
             animate={{ height: active ? 250 : 54 }}
         >
             <motion.p className={styles.label}>{props.label}</motion.p>
