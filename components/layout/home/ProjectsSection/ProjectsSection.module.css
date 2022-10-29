@@ -21,35 +21,7 @@
     color: var(--white)
 }
 .filterSection{
-    position: relative;
-    z-index: 100;
-    height: 70px;
-    margin-top: 24px;
-    margin-left: 40px;
-    padding-left: 274px;
-    display: flex;
-    align-items: flex-start;
-}
-.select{
-    width: 250px;
-    position: absolute;
-    z-index: 100;
-    left: 0;
-}
-.chip{
-    margin-top: 2px
-}
-.placeholder{
-    font-style: italic;
-    color: var(--orangeLight);
-    font-weight: 500;
-    padding-left: 4px;
-}
-.chipContainer{
-    display: flex;
-    flex-direction: row;
-    width: max-content;
-    gap: 24px;
+    margin: 24px 40px;
 }
 .grid{
     display: grid;
@@ -68,11 +40,12 @@
     .header{
         padding-left: 24px
     }
-    .filterSection{
-        margin-left: 24px;
-    }
 }
 @media screen and (max-width: 600px){
+    .grid {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
     .header{
         margin-bottom: 24px;
     }
@@ -80,23 +53,8 @@
         background-color: var(--black);
         border-radius: 100%;
     }
-    .filterSection {
-        width: calc(100% - 48px);
-        height: 132px;
-        padding-left: 0px;
-    }
-    .chip{
-        margin-top: 0;
-    }
-    .placeholder {
-        transform: translateY(-4px);
-    }
-    .chipContainer{
-        margin-top: 78px;
-        gap: 16px;
-    }
-    .select {
-        width: 100%;
+    .filterSection{
+        margin: 24px 16px 0px;
     }
 }
 @media screen and (max-width: 550px) {

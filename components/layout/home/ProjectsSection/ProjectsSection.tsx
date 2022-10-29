@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
 import Chip from "../../../buttons/Chip/Chip";
@@ -7,6 +7,13 @@ import Select from "../../../inputs/Select/Select";
 import PlanetSvg from "../../../svg/PlanetSvg/PlanetSvg"
 import styles from './ProjectsSection.module.css'
 import data from'../../../../public/projects.json'
+import FilterBar from "../../../inputs/FilterBar/FilterBar";
+
+const OPTIONS = [
+    'React', 'Node', 'PostgreSQL', 'React Native', 
+    'Next.js', 'TypeScript', 'Contentful', 'AWS', 
+    'GraphQL', 'Postgis', 'Google Cloud', 'MongoDB', 'Stripe'
+]
 
 const ProjectsSection = () => {
 
@@ -18,37 +25,21 @@ const ProjectsSection = () => {
                 <Link href={'/'}><div><PlanetSvg className={styles.planet}/></div></Link>
                 <h1 className={styles.headerText}>My Projects</h1>
             </header>
-            <div className={styles.filterSection}>
-                <Select
-                    label={'Filter by stack'} className={styles.select}    
-                    values={filters} setValues={setFilters} 
-                    options={['React.js', 'Node.js', 'PostgreSQL', 'React Native', 'Next.js']} 
+            <LayoutGroup>
+                <FilterBar 
+                    label={'Filter by stack'} 
+                    options={OPTIONS} 
+                    containerClass={styles.filterSection} 
+                    selected={filters}
+                    setSelected={setFilters}
+                    totalResults={4}
                 />
-                <div className={styles.chipContainer}>
-                    <AnimatePresence>
-                    {filters.length ? filters.map(x => (
-                        <Chip 
-                            key={x} label={x} className={styles.chip} 
-                            onRemove={() => setFilters(state => state.filter(y => y !== x))}
-                        />
-                    )):(
-                        <motion.p 
-                            className={styles.placeholder}
-                            initial={{ opacity: 0}} 
-                            animate={{ opacity: 1, transition: { delay: .2 } }} 
-                            exit={{ opacity: 0}}
-                        >
-                            Showing {data.length} results
-                        </motion.p>
-                    )}
-                    </AnimatePresence>
-                </div>
-            </div>
-            <div className={styles.grid}>
-                {data.map(x => (
-                    <ProjectCard key={x.id} data={x as IProject}/>
-                ))}
-            </div>
+                <motion.div className={styles.grid} layout>
+                    {data.map(x => (
+                        <ProjectCard key={x.id} data={x as IProject}/>
+                    ))}
+                </motion.div>
+            </LayoutGroup>
         </section>
     )
 };
