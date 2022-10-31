@@ -1,10 +1,177 @@
 [
     {
-        "id": 23452347,
+        "sys": {
+            "id": "5vVkvtxQrlAEWN5RwOGdYY"
+        },
+        "title": "Heron-Mobile.com",
+        "type": "Website",
+        "description": "Official landing page and feature showcase for the Heron Mobile App",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/heron-website-thumbnail.png",
+        "github": "https://github.com/jhahn678/heron-website",
+        "web": "www.heron-mobile.com",
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "React",
+            "Next.js",
+            "AWS"
+        ],
+        "tags": [
+            "React",
+            "Next.js",
+            "AWS"
+        ]
+    },
+    {
+        "sys": {
+            "id": "7inGrXTMNojZTRYoVTelK0"
+        },
+        "title": "Mountain Trout Fly Co.",
+        "type": "Ecommerce",
+        "description": "Online fly shop and e-commerce system built with the MERN stack",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-shop-thumbnail.png",
+        "github": "https://github.com/jhahn678/MTFC",
+        "web": "www.mountaintroutflyco.com",
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "React",
+            "Redux",
+            "Node",
+            "MongoDB",
+            "Google Cloud",
+            "Stripe"
+        ],
+        "tags": [
+            "React",
+            "Redux",
+            "Node",
+            "MongoDB",
+            "Google Cloud",
+            "Stripe"
+        ]
+    },
+    {
+        "sys": {
+            "id": "moPBFHOUWMeo5kWO44zEj"
+        },
+        "title": "Nearby Waters API",
+        "type": "Web API",
+        "description": "Original API behind Heron's nearby waterbody query functionality. Returns weighted results for fisheries near a location",
+        "thumbnail": null,
+        "github": "https://github.com/jhahn678/Nearby-Waters-API",
+        "web": null,
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "Node",
+            "PostgreSQL",
+            "Postgis"
+        ],
+        "tags": [
+            "Node",
+            "PostgreSQL"
+        ]
+    },
+    {
+        "sys": {
+            "id": "6YEPRHShyi5EKEpXNQqMde"
+        },
+        "title": "Heron API GeoJSON modifier",
+        "type": "Development Tool",
+        "description": "A development interface used for modifying and combining GeoJSON resources from OpenStreetMaps",
+        "thumbnail": null,
+        "github": "https://github.com/jhahn678/nearby-waters-react",
+        "web": null,
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "React",
+            "React-Query",
+            "Mapbox"
+        ],
+        "tags": [
+            "React",
+            "Mapbox"
+        ]
+    },
+    {
+        "sys": {
+            "id": "2ZfENiq598XmKcUxnVQCkm"
+        },
+        "title": "Heron API",
+        "type": "Web API",
+        "description": "Express/GraphQL API that serves the Heron Mobile App. ",
+        "thumbnail": null,
+        "github": "https://github.com/jhahn678/Heron-API",
+        "web": "https://api.heron-mobile.com",
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "Node",
+            "TypeScript",
+            "GraqhQL",
+            "PostgreSQL",
+            "S3",
+            "Beanstalk",
+            "RDS"
+        ],
+        "tags": [
+            "Node",
+            "TypeScript",
+            "PostgreSQL",
+            "Postgis",
+            "AWS",
+            "OpenStreetMaps"
+        ]
+    },
+    {
+        "sys": {
+            "id": "2cd4BeN2UXYXYtvmF8O514"
+        },
+        "title": "Mountain Trout Blog",
+        "type": "Blog Application",
+        "description": "A fly fishing blog platform built to accompany Mountain Trout Fly Co. online store",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-blog-thumbnail.png",
+        "github": "https://github.com/jhahn678/MTFC-Blog",
+        "web": "blog.mountaintroutflyco.com",
+        "apple": null,
+        "playstore": null,
+        "stack": [
+            "React",
+            "Next.js",
+            "Contentful",
+            "MongoDB"
+        ],
+        "tags": [
+            "React",
+            "Next.js",
+            "Contentful",
+            "MongoDB"
+        ]
+    },
+    {
+        "sys": {
+            "id": "4hu2a1CZEsNnN5z47NIL6Z"
+        },
         "title": "Heron",
-        "description": "A mobile fishing companion",
-        "thumbnail":  "https://julian-hahn-portfolio.s3.amazonaws.com/heron-thumbnail.png",
+        "type": "Mobile",
+        "description": "A mobile fishing companion built using React Native",
+        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/heron-thumbnail.png",
         "github": "https://github.com/jhahn678/Heron-Expo",
+        "web": null,
+        "apple": "w",
+        "playstore": "w",
+        "stack": [
+            "React Native",
+            "TypeScript",
+            "Node",
+            "GraphQL",
+            "S3",
+            "RDS",
+            "Beanstalk",
+            "PostgreSQL"
+        ],
         "tags": [
             "React Native",
             "TypeScript",
@@ -13,45 +180,6 @@
             "AWS",
             "PostgreSQL",
             "Postgis"
-        ]
-    },
-    {
-        "id": 845676234,
-        "title": "Mountain Trout Fly Co.",
-        "description": "Online fly shop & ecommerce system",
-        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-shop-thumbnail.png",
-        "github": "https://github.com/jhahn678/MTFC",
-        "tags": [
-            "React",
-            "Node",
-            "MongoDB",
-            "Google Cloud"
-        ]
-    },
-    {
-        "id": 6345135,
-        "title": "Mountain Trout Blog",
-        "description": "A fly fishing blog platform",
-        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/mtfc-blog-thumbnail.png",
-        "github": "https://github.com/jhahn678/MTFC-Blog",
-        "tags": [
-            "React",
-            "Next.js",
-            "Contentful",
-            "Stripe",
-            "MongoDB"
-        ]
-    },
-    {
-        "id": 6367435,
-        "title": "Heron-mobile.com",
-        "description": "Mobile application landing page",
-        "thumbnail": "https://julian-hahn-portfolio.s3.amazonaws.com/heron-thumbnail.png",
-        "github": "https://github.com/jhahn678/heron-website",
-        "tags": [
-            "React",
-            "Next.js",
-            "AWS"
         ]
     }
 ]
