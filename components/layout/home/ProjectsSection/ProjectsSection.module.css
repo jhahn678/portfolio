@@ -4,7 +4,7 @@
     padding-bottom: 32px;
     display: flex;
     flex-direction: column;
-    background-image: url('../../../../public/background-one-desktop.svg');
+    background-image: url('../../../../public/background-one.svg');
     background-color: var(--black);
     background-position: top right;
     background-repeat: repeat;
@@ -13,12 +13,14 @@
     padding-left: 32px;
     display: flex;
     align-items: center;
+    
 }
 .headerText {
     margin: 0;
     font-size: 48px;
     margin-left: 24px;
-    color: var(--white)
+    color: var(--white);
+    background-color: var(--black);
 }
 .filterSection{
     margin: 24px 40px;

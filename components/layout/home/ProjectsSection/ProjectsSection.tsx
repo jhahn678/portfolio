@@ -1,23 +1,27 @@
 import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
 import Link from "next/link";
-import React, { useState } from "react";
-import Chip from "../../../buttons/Chip/Chip";
-import ProjectCard, { IProject } from "../../../cards/ProjectCard/ProjectCard";
-import Select from "../../../inputs/Select/Select";
+import React, { useEffect, useState } from "react";
+import ProjectCard from "../../../cards/ProjectCard/ProjectCard";
 import PlanetSvg from "../../../svg/PlanetSvg/PlanetSvg"
 import styles from './ProjectsSection.module.css'
-import data from'../../../../public/projects.json'
 import FilterBar from "../../../inputs/FilterBar/FilterBar";
+import { IProject } from "../../../../types/Project";
 
-const OPTIONS = [
-    'React', 'Node', 'PostgreSQL', 'React Native', 
-    'Next.js', 'TypeScript', 'Contentful', 'AWS', 
-    'GraphQL', 'Postgis', 'Google Cloud', 'MongoDB', 'Stripe'
-]
+interface Props{
+    projects: IProject[]
+}
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ projects }: Props) => {
 
-    const [filters, setFilters] = useState<string[]>([])
+    const filters = Array.from(new Set(projects.map(x => x.tags).flat()))
+    const [selected, setSelected] = useState<string[]>([])
+    const [filtered, setFiltered] = useState<IProject[]>(projects)
+
+    useEffect(() => {
+        selected.length === 0 ?
+            setFiltered(projects) :
+            setFiltered(projects.filter(x => x.tags.some(tag => selected.includes(tag))))
+    },[selected])
 
     return (
         <section className={styles.container}>
@@ -28,15 +32,15 @@ const ProjectsSection = () => {
             <LayoutGroup>
                 <FilterBar 
                     label={'Filter by stack'} 
-                    options={OPTIONS} 
+                    options={filters} 
                     containerClass={styles.filterSection} 
-                    selected={filters}
-                    setSelected={setFilters}
-                    totalResults={4}
+                    selected={selected}
+                    setSelected={setSelected}
+                    totalResults={projects.length}
                 />
                 <motion.div className={styles.grid} layout>
-                    {data.map(x => (
-                        <ProjectCard key={x.id} data={x as IProject}/>
+                    {filtered.map(x => (
+                        <ProjectCard key={x.sys.id} data={x as IProject}/>
                     ))}
                 </motion.div>
             </LayoutGroup>
