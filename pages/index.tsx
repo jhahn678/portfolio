@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import ButtonFilled from '../components/buttons/ButtonFilled/ButtonFilled'
@@ -12,10 +12,14 @@ import { IoLogoGithub, IoLogoLinkedin } from 'react-icons/io5'
 import IconButton from '../components/buttons/IconButton/IconButton'
 import { BsEnvelope, BsPhone } from 'react-icons/bs'
 import ProjectsSection from '../components/layout/home/ProjectsSection/ProjectsSection'
-import Modal from '../components/modal/Modal'
+import axios from 'axios'
+import { IProject } from '../types/Project'
 
+interface Props {
+  projects: IProject[]
+}
 
-const Home: NextPage = () => {
+const Home: NextPage<Props> = (props) => {
 
   const router = useRouter()
 
@@ -61,31 +65,33 @@ const Home: NextPage = () => {
           <Image src={'/landing-page-graphic.svg'} layout='fill'/>
         </section>
       </div>
-      <ProjectsSection/>
+      <ProjectsSection projects={props.projects}/>
     </div>
   )
 }
 
 export default Home
 
+interface ProjectsRes {
+  data: {
+    projectCollection: {
+      items: IProject[]
+    }
+  }
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await axios.post<ProjectsRes>(process.env.CONTENTFUL_GRAPH_URL!, {
+    query: "query{projectCollection{items{sys{id},title,type,description,thumbnail,web,github,apple,playstore,stack,tags}}}"
+  }, {
+    headers: { "Authorization": `Bearer ${process.env.CONTENT_PREVIEW_ACCESS_TOKEN}` }
+  })
+  const { items: projects } = res.data.data.projectCollection;
+  return {
+    props: { projects }
+  }
+}
 
 
 
 
-
-
-
-
-
-
-{/* <Comet order={1} startX={300}/>
-    <Comet order={2} startX={-100}/>
-    <Comet order={3} startX={-200}/>
-    <Comet order={4} startX={400}/>
-    <Comet order={5} startX={-500}/>
-    <Comet order={6} startX={800}/>
-    <Comet order={7} startX={500}/>
-    <Comet order={8} startX={300}/>
-    <Comet order={9} startX={600}/>
-    <Comet order={10} startX={0}/>
-    <Comet order={11} startX={-400}/> */}
