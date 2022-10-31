@@ -3,15 +3,7 @@ import styles from './ProjectCard.module.css'
 import { motion } from 'framer-motion'
 import { IoLogoGithub } from 'react-icons/io'
 import router from "next/router";
-
-export interface IProject {
-  id: number,
-  title: string,
-  description: string,
-  thumbnail: string,
-  github: string,
-  tags: string[]
-}
+import { IProject } from "../../../types/Project";
 
 interface Props{
   data: IProject
@@ -38,14 +30,14 @@ const ProjectCard = ({ data }: Props) => {
 
   return (
     <motion.div 
-      className={styles.container} 
+      className={styles.container}
       style={{ backgroundImage: `url("${data.thumbnail}")` }}
       whileHover={{ scale: 1.02 }} whileTap={{ scale: .98 }}
-      onClick={() => router.push(`/project/${data.id}`)}
+      onClick={() => router.push(`/project/${data.sys.id}`)}
       onHoverStart={() => setHovering(true)}
       onHoverEnd={() => setHovering(false)}
     >
-      <motion.div className={styles.heading} animate={{ height: hovering ? 100 : 60 }}>
+      <motion.div className={styles.heading} animate={{ height: hovering ? undefined : 60 }}>
         <div className={styles.row}>
           <motion.h3 className={styles.title}>{data.title}</motion.h3>
           <motion.a whileHover={{ scale: 1.2 }} href={data.github} target='_blank' style={{ height: 28 }}>
