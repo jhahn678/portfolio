@@ -3,14 +3,15 @@ import { motion, MotionProps } from 'framer-motion'
 import styles from './IconButton.module.css'
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
-    icon: JSX.Element
+    icon: JSX.Element,
+    small?: boolean
 }
 
 const IconButton = ({ icon, className, ...props}: Props) => {
   return (
     <motion.button 
         {...props} whileTap={{ scale: .98 }}
-        className={`${styles.container} ${className}`} 
+        className={`${styles.container} ${props.small ? styles.small : styles.normal} ${className}`} 
         whileHover={{ scale: 1.05, cursor: 'pointer' }}
     >
         {icon}
