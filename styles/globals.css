@@ -29,7 +29,7 @@ a {
 
 
 :root{
-  --black: #252523;
+  --black: #262624;
   --white: #F4F4F4;
   --gray: #AFAEAE;
   --orange: #F0903F;
@@ -37,6 +37,7 @@ a {
   --orangeGradient: linear-gradient(180deg, #F0903F 0%, #FFB680 100%);
   --orangeShadow: 0px 2px 12px rgba(240, 144, 63, 0.4);
   --orangeDropShadow: drop-shadow(0px 2px 12px rgba(240, 144, 63, 0.4));
+  --whiteDropShadow: drop-shadow(0px 1px 10px rgba(255, 255, 255, .4));
   --red: #f05c3f
 }
 
@@ -45,4 +46,8 @@ a {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+.fc{
+  display: flex;
+  flex-direction: column;
 }
