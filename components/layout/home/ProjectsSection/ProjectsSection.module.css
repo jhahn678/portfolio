@@ -1,10 +1,9 @@
 .container {
     width: 100vw;
-    padding-top: 64px;
     padding-bottom: 32px;
     display: flex;
     flex-direction: column;
-    background-image: url('../../../../public/background-one.svg');
+    background-image: url('/background-one.svg');
     background-color: var(--black);
     background-position: top right;
     background-repeat: repeat;
@@ -51,10 +50,6 @@
     .header{
         margin-bottom: 24px;
     }
-    .headerText{
-        background-color: var(--black);
-        border-radius: 100%;
-    }
     .filterSection{
         margin: 24px 16px 0px;
     }
@@ -67,20 +62,14 @@
         padding-left: 16px
     }
     .planet{
-        height: 84px;
-        width: 84px;
+        height: 64px;
+        width: 64px;
     }
     .headerText {
-        font-size: 40px;
+        background-color: var(--black);
+        border-radius: 100%;
+        font-size: 36px;
         margin-left: 16px;
     }
 }
-@media screen and (max-width: 400px) {
-    .planet {
-        height: 72px;
-        width: 72px;
-    }
-    .headerText {
-        font-size: 36px;
-    }
-}
+

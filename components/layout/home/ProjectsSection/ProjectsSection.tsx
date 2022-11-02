@@ -9,9 +9,10 @@ import { IProject } from "../../../../types/Project";
 
 interface Props{
     projects: IProject[]
+    style?: React.CSSProperties | undefined
 }
 
-const ProjectsSection = ({ projects }: Props) => {
+const ProjectsSection = ({ projects, style }: Props) => {
 
     const filters = Array.from(new Set(projects.map(x => x.tags).flat()))
     const [selected, setSelected] = useState<string[]>([])
@@ -24,7 +25,7 @@ const ProjectsSection = ({ projects }: Props) => {
     },[selected])
 
     return (
-        <section className={styles.container}>
+        <section className={styles.container} style={style}>
             <header className={styles.header}>
                 <Link href={'/'}><div><PlanetSvg className={styles.planet}/></div></Link>
                 <h1 className={styles.headerText}>My Projects</h1>
@@ -38,7 +39,7 @@ const ProjectsSection = ({ projects }: Props) => {
                     setSelected={setSelected}
                     totalResults={projects.length}
                 />
-                <motion.div className={styles.grid} layout>
+                <motion.div className={styles.grid}>
                     {filtered.map(x => (
                         <ProjectCard key={x.sys.id} data={x as IProject}/>
                     ))}

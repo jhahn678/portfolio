@@ -1,0 +1,65 @@
+.drawer {
+    width: 100%;
+    max-width: 600px;
+}
+.planet{
+    height: 50px;
+    width: 50px
+}
+.drawerHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    padding-bottom: 24px;
+}
+.menu {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--orangeLight);
+    border-radius: 16px;
+    background-color: var(--black);
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+.menuClose {
+    padding: 4px;
+    width: min-content;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--black);
+    border-radius: 16px;
+}
+.menuItem {
+    font-size: 32px;
+    font-weight: 600;
+    width: min-content;
+    color: var(--black);
+    padding-bottom: 6px;
+    border-bottom: 3px solid var(--black);
+    margin-top: 6px;
+    margin-left: 16px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.drawerIconContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+@media screen and (max-height: 700px) {
+    .menuItem {
+        margin-bottom: 24px;
+    }
+}

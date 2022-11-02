@@ -1,0 +1,145 @@
+.landing {
+    width: 100vw;
+    height: 100vh;
+    padding: 16px 32px 32px;
+    display: grid;
+    grid-template-columns: 5fr 4fr;
+    background-image: url('/landing-page-background-desktop.svg');
+    background-color: var(--black);
+    background-position: top right;
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+.planet {
+    height: 84px;
+    width: 84px;
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    margin-left: 24px;
+    background-color: var(--black);
+}
+.divider {
+    height: 40px;
+    width: 3px;
+    background-color: var(--orangeLight);
+    margin: 0 24px;
+}
+.link {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--orangeLight);
+    cursor: pointer;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.CTAgroup {
+    align-self: center;
+}
+.mainText {
+    margin-left: 24px;
+    max-width: 500px;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--black);
+}
+.textGradient {
+    background: var(--orangeGradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: var(--orangeShadow)
+}
+.CTA {
+    margin-right: 24px;
+    margin-bottom: 24px;
+}
+.buttonContainer {
+    margin-left: 24px;
+    display: flex;
+}
+.right {
+    margin-top: 5vh;
+    box-sizing: border-box;
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+
+@media screen and (min-width: 1500px) {
+    .landing {
+        background-size: 100% auto;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .landing {
+        display: flex;
+        flex-direction: column;
+    }
+    .right {
+        display: none;
+    }
+    .left {
+        height: 100vh;
+        align-items: center;
+    }
+    .mainText {
+        margin-top: 0;
+        margin-left: 0;
+        text-align: center;
+    }
+    .buttonContainer {
+        justify-content: center;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .header {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .landing{
+        padding: 16px 16px 64px;
+    }
+    .mainText {
+        font-size: 40px;
+        padding: 0 8px;
+    }
+    .buttonContainer {
+        flex-direction: column;
+        align-self: start;
+        width: 100%;
+        padding: 0 16px;
+    }
+    .CTA {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .header {
+        height: 84px;
+    }
+}
+
+@media screen and (max-height: 750px) and (max-width: 450px) {
+    .mainText {
+        font-size: 32px;
+    }
+}

@@ -1,0 +1,239 @@
+.container {
+    background-image: url('/background-one.svg');
+    padding-bottom: 10vh;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 24px;
+    row-gap: 80px;
+    column-gap: 50px;
+    background-image: url('/background-one.svg');
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 24px;
+}
+.headingLeft{
+    text-align: left;
+    margin: 0;
+    color: var(--white);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    font-size: 40px;
+    font-weight: 600;
+    border-bottom: 3px solid var(--orangeLight);
+    background-color: var(--black);
+}
+.textLeft{
+    text-align: left;
+    margin: 0;
+    padding-top: 24px;
+    max-width: 90%;
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--black);
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 24px;
+}
+.headingRight{
+    margin: 0;
+    color: var(--white);
+    padding-bottom: 12px;
+    padding-top: 12px;
+    font-size: 40px;
+    font-weight: 600;
+    border-bottom: 3px solid var(--orangeLight);
+    background-color: var(--black);
+    text-align: right;
+}
+.textRight{
+    margin: 0;
+    padding-top: 24px;
+    max-width: 90%;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: right;
+    color: var(--white);
+    background-color: var(--black);
+}
+.figureOne {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    margin: 0;
+    max-width: 700px;
+    border-radius: 16px;
+    filter: drop-shadow(0px 1px 8px rgba(255, 255, 255, .3));
+}
+.figureOneCaption {
+    color: var(--white);
+    position: absolute;
+    bottom: -48px;
+}
+.figureTwo{
+    margin: 0;
+    position: relative;
+    height: 500px;
+    width: 100%;
+    max-width: 900px;
+}
+.divider{
+    display: none;
+}
+.contact {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 48px 0;
+    border-top: 5px solid var(--orange);
+    border-bottom: 5px solid var(--orange);
+    filter: var(--orangeDropShadow);
+    background-color: var(--black);
+}
+
+.contactContent {
+    max-width: 450px;
+    margin-right: 16px;
+}
+
+.contactHeading {
+    margin: 0;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.contactText {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 500;
+    color: var(--white);
+    padding-top: 16px;
+    border-top: 3px solid var(--orangeLight);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.cardHeader {
+    margin: 16px;
+}
+
+.arrow {
+    transform: translateY(25px) rotateY(180deg);
+}
+
+@media screen and (max-width: 1000px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding-bottom: 10vh;
+    }
+    .left{
+        width: 100%;
+        align-items: center;
+        margin-left: 0;
+    }
+    .textLeft{
+        text-align: center;
+        max-width: 700px;
+    }
+    .headingRight{
+        text-align: center;
+    }
+    .divider {
+        display: block;
+        height: 5px;
+        width: 100%;
+        max-width: 800px;
+        margin-top: 15vh;
+        margin-bottom: 7vh;
+        background-color: var(--orangeLight);
+    }
+    .right{
+        width: 100%;
+        margin-right: 0;
+        align-items: center;
+    }
+    .textRight{
+        text-align: center;
+        max-width: 700px;
+    }
+    .headingRight{
+        text-align: center;
+    }
+    .figureOne {
+        max-width: 700px;
+        margin-top: 10vh;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact {
+        flex-direction: column;
+        padding: 48px 24px 64px;
+    }
+    .contactContent {
+        margin-right: 0;
+        margin-bottom: 24px;
+    }
+    .contactHeading {
+        text-align: center;
+    }
+    .contactText {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .divider{
+        display: none;
+    }
+    .figureOne{
+        margin-bottom: 15vh;
+    }
+    .figureTwo{
+        display: none;
+    }
+}
+@media screen and (max-width: 550px) {
+    .figureOne {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .headingRight, .headingLeft {
+        font-size: 32px;
+    }
+    .textRight, .textLeft {
+        font-size: 18px;
+    }
+    .contactContent {
+        max-width: 90vw;
+    }
+    .card {
+        max-width: 90vw;
+    }
+    .cardHeader {
+        font-size: 20px;
+    }
+}
