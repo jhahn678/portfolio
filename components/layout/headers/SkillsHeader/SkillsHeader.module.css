@@ -1,0 +1,91 @@
+.container {
+    width: 100%;
+    padding: 0px 24px;
+    display: flex;
+    align-items: center;
+}
+
+.planet {
+    height: 84px;
+    width: 84px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    margin-left: 24px;
+    background-color: var(--black);
+}
+
+.current {
+    margin: 0;
+    margin-left: 24px;
+    font-size: 40px;
+    color: var(--white);
+    background-color: var(--black);
+}
+
+.divider {
+    height: 48px;
+    width: 3px;
+    background-color: var(--orangeLight);
+    margin: 0 24px;
+}
+
+.link {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--orangeLight);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.menu {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--orangeLight);
+    border-radius: 16px;
+    background-color: var(--black);
+}
+
+@media screen and (max-width: 1050px) {
+    .planet {
+        height: 72px;
+        width: 72px;
+    }
+
+    .links {
+        margin-left: 24px
+    }
+
+    .link {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .planet {
+        height: 64px;
+        width: 64px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .current {
+        font-size: 32px;
+        margin-left: 16px;
+    }
+}

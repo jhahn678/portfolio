@@ -1,0 +1,120 @@
+.container{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: min-content min-content 1fr;
+    justify-items: flex-end;
+}
+.planet{
+    height: 84px;
+    width: 84px;
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 16px;
+    margin-left: 32px;
+}
+
+.link {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--orangeLight);
+    border-bottom-color: var(--orangeLight);
+    border-bottom-style: solid;
+    padding-bottom: 4px;
+    padding: 4px 4px;
+}
+
+
+.iconButtonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu{
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--orangeLight);
+    border-radius: 16px;
+    background-color: var(--black);
+}
+
+.drawer{
+    width: 100%;
+    max-width: 600px;
+}
+.drawerHeader{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    padding-bottom: 24px;
+}
+.menuClose {
+    padding: 4px;
+    width: min-content;
+    height: min-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--black);
+    border-radius: 16px;
+}
+.menuItem{
+    font-size: 32px;
+    font-weight: 600;
+    width: min-content;
+    color: var(--black);
+    padding-bottom: 6px;
+    border-bottom: 3px solid var(--black);
+    margin-top: 6px;
+    margin-left: 24px;
+}
+.drawerIconContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+@media screen and (max-width: 1050px) {
+    .planet{
+        height: 72px;
+        width: 72px;
+    }
+    .links{
+        margin-left: 24px
+    }
+    .link{
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .container{
+        display: flex;
+        justify-content: space-between;
+    }
+    .planet{
+        height: 64px;
+        width: 64px;
+    }
+}
+
+
+@media screen and (max-height: 700px) {
+    .menuItem {
+        margin-bottom: 24px;
+    }
+}
+
