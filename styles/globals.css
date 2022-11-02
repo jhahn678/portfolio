@@ -29,7 +29,7 @@ a {
 
 
 :root{
-  --black: #262624;
+  --black: #252523;
   --white: #F4F4F4;
   --gray: #AFAEAE;
   --orange: #F0903F;
@@ -37,8 +37,16 @@ a {
   --orangeGradient: linear-gradient(180deg, #F0903F 0%, #FFB680 100%);
   --orangeShadow: 0px 2px 12px rgba(240, 144, 63, 0.4);
   --orangeDropShadow: drop-shadow(0px 2px 12px rgba(240, 144, 63, 0.4));
-  --whiteDropShadow: drop-shadow(0px 1px 10px rgba(255, 255, 255, .4));
+  --whiteDropShadow: drop-shadow(0px 1px 10px rgba(255, 255, 255, .3));
   --red: #f05c3f
+}
+
+.text-gradient {
+  background: var(--orangeGradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: var(--orangeShadow)
 }
 
 .frsb{
@@ -50,4 +58,9 @@ a {
 .fc{
   display: flex;
   flex-direction: column;
+}
+.frac{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
