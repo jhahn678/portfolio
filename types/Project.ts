@@ -12,9 +12,11 @@ export interface IProject {
   github: string,
   stack: StackItem[],
   tags: string[]
+  slug: string
 }
 
-export type StackItem = 'React Native'
+export type StackItem = 
 | 'React'| 'Node' | 'PostgreSQL' | 'Next.js'| 'TypeScript' | 'Contentful' | 'AWS' 
 | 'GraphQL' | 'Google Cloud' | 'MongoDB' | 'Stripe' | 'S3' | 'EC2' | 'RDS' | 'Apollo' 
 | 'Beanstalk' | 'Firebase' | 'Mapbox' | 'React-Query' | 'Redis' | 'Redux' | 'Expo'
+| 'Pandas' | 'Jest' | 'React Native' | 'HTML & CSS'
