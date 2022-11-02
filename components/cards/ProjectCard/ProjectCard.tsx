@@ -33,7 +33,7 @@ const ProjectCard = ({ data }: Props) => {
       className={styles.container}
       style={{ backgroundImage: `url("${data.thumbnail}")` }}
       whileHover={{ scale: 1.02 }} whileTap={{ scale: .98 }}
-      onClick={() => router.push(`/project/${data.sys.id}`)}
+      onClick={() => router.push(`/project/${data.slug}`)}
       onHoverStart={() => setHovering(true)}
       onHoverEnd={() => setHovering(false)}
     >

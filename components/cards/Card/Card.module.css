@@ -2,5 +2,7 @@
     padding: 24px;
     border-radius: 12px;
     background-color: var(--orangeLight);
-    filter: var(--orangeDropShadow)
+    filter: var(--orangeDropShadow);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }

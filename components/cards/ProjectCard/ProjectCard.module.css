@@ -26,12 +26,11 @@
     position: relative;
     z-index: 5;
     margin-top: 24px;
-    padding: 8px 16px;
+    padding: 16px;
     background-color: var(--orangeLight);
     overflow: hidden;
 }
 .row{
-    margin-top: 8px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -43,8 +42,6 @@
 }
 .caption{
     font-family: Montserrat, 'sans-serif';
-    margin-top: 8px;
-    margin-bottom: 8px;
     font-weight: 500;
 }
 .chips{

@@ -1,17 +1,14 @@
+import { HTMLMotionProps, motion } from "framer-motion";
 import React from "react";
 import styles from './Card.module.css'
 
-interface Props {
-    children?: React.ReactNode
-    className?: string
-    
-}
-
-const Card = (props: Props): JSX.Element => {
+const Card = ({ className, children, ...props}: HTMLMotionProps<'div'>): JSX.Element => {
   return (
-    <div className={`${styles.container} ${props.className}`}>
-        {props.children}
-    </div>
+    <motion.div className={`${styles.container} ${className}`} 
+      {...props}
+    >
+        {children}
+    </motion.div>
   )
 };
 
