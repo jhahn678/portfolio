@@ -1,34 +1,29 @@
 .container{
-    padding: 32px;
-    min-height: 100vh;
+    min-height: calc(100vh - 250px);
+    box-sizing: border-box;
+    padding: 16px 24px 32px;
     width: 100vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100px 1fr;
-    background-image: url('../public/background-one-desktop.svg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('/background-one.svg');
     background-color: var(--black);
     background-position: top right;
 }
-
-.header{
-    display: flex;
-    align-items: center;
-}
-
-.headerText{
-    font-size: 48px;
-    margin-left: 24px;
-    color: var(--white)
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .left{
     padding-top: 48px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card{
+    max-width: 600px;
     width: 80%;
 }
 
@@ -43,20 +38,16 @@
     font-weight: 500;
 }
 
-.iconButtonContainer{
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
 .right{
     padding-top: 48px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 .form{
     height: 100%;
     width: 90%;
+    max-width: 600px;
     background-color: var(--black);
     border: 5px solid var(--orange);
     border-radius: 12px;
@@ -77,48 +68,38 @@
 
 @media screen and (max-width: 1050px) {
     .container{
+        padding: 16px 24px 48px;
+    }
+    .card{
+        width: 95%
+    }
+    .form{
+        width: 95%
+    }
+    .left{
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .header{
-        transform: translateX(-32px);
+    .left, .right{
+        padding-top: 32px;
+        width: 100%;
     }
-    .iconButtonContainer{
-        margin-top: 24px;
-    }
-    .card{
-        max-width: 600px;
-        width: 90vw
-    }
-    .form{
-        max-width: 600px;
-        width: 90vw
-    }
-    .headerText{
-        margin-top: 0;
-        margin-bottom: 0;
+    .card, .form {
+        width: 100%
     }
 }
-
-@media screen and (max-width: 525px) {
-    .header {
-        transform: translateX(-24px);
+@media screen and (max-width: 420px) {
+    .cardHeader{
+        font-size: 28px;
     }
-    .headerText{
-        font-size: 36px;
-    }
-    .planet{
-        height: 84px;
-        width: 84px;
-    }
-}
-@media screen and (max-width: 390px) {
-    .planet {
-        height: 72px;
-        width: 72px;
-    }
-    .headerText {
-        font-size: 32px;
+    .cardText{
+        font-size: 18px;
     }
 }
