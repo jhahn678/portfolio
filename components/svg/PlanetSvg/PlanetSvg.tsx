@@ -5,14 +5,16 @@ import { motion } from 'framer-motion'
 
 interface Props {
     className?: string
+    onClick?: () => void
 }
 
-const PlanetSvg = ({ className }: Props) => {
+const PlanetSvg = ({ className, onClick }: Props) => {
 
   return (
     <motion.div 
       whileHover={{ rotate: '-10deg', cursor: 'pointer' }}
       className={`${styles.container} ${className}`}
+      onClick={onClick}
     >
         <Image src={'/planet.svg'} layout='fill'/>
     </motion.div>
