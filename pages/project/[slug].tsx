@@ -23,21 +23,21 @@ const Project: NextPage<IProject> = (props) => {
             <h3 className={styles.type}>{props.type}</h3>
             <div className={styles.buttons}>
               <a href={props.github || undefined} target='_blank'>
-                  <IconButton small icon={<IoLogoGithub size={24} color={'var(--orangeLight)'}/>}/>
+                  <IconButton small={true} icon={<IoLogoGithub size={24} color={'var(--orangeLight)'}/>}/>
               </a>
               {props.web &&
                 <a href={props.web} target='_blank'>
-                  <IconButton small icon={<MdWeb size={24} color={'var(--orangeLight)'}/>}/>
+                  <IconButton small={true} icon={<MdWeb size={24} color={'var(--orangeLight)'}/>}/>
                 </a>
               }
               {props.apple && 
                 <a href={props.apple} target='_blank'>
-                    <IconButton small icon={<GrAppleAppStore size={24} color={'var(--orangeLight)'}/>}/>
+                    <IconButton small={true} icon={<GrAppleAppStore size={24} color={'var(--orangeLight)'}/>}/>
                 </a>
               }
               {props.playstore && 
                 <a href={props.playstore} target='_blank'>
-                  <IconButton small icon={<IoLogoGooglePlaystore size={24} color={'var(--orangeLight)'} style={{ transform: 'translate(2px, 2px)' }}/>}/>
+                  <IconButton small={true} icon={<IoLogoGooglePlaystore size={24} color={'var(--orangeLight)'} style={{ transform: 'translate(2px, 2px)' }}/>}/>
                 </a>
               }
             </div>
@@ -47,7 +47,7 @@ const Project: NextPage<IProject> = (props) => {
           <Line height={3} width={'85%'} color={'var(--orangeLight)'} className={styles.hline}/>
           <h4 className={styles.subtitle}>Technologies</h4>
           <div className={styles.techContainer}>
-            { props.stack.map(x => <TechCard label={x as StackItem}/>)}
+            { props.stack.map(x => <TechCard key={x} label={x as StackItem} size={50}/>)}
           </div>
         </div>
       </section>

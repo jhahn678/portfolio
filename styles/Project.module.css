@@ -14,8 +14,8 @@
 }
 .title {
     margin: 0;
-    font-size: 54px;
-    line-height: 88px;
+    font-size: 48px;
+    line-height: 64px;
     background: var(--orangeGradient);
     background-clip: text;
     -webkit-background-clip: text;
@@ -30,7 +30,7 @@
     align-items: center;
 }
 .type{
-    font-size: 40px;
+    font-size: 36px;
     margin: 0;
     font-weight: 500;
     color: var(--gray);
@@ -70,14 +70,12 @@
     flex-wrap: wrap;
     gap: 16px;
 }
-/* .right{
-
-} */
 .image{
     position: relative;
     height: 100%;
+    max-height: calc(100vh - 64px);
     width: 100%;
     overflow: hidden;
-    border: 5px solid var(--orangeLight);
     border-radius: 12px;
+    filter: var(--whiteDropShadow);
 }

@@ -19,24 +19,20 @@ const ContactButtons = ({ className }: Props) => {
     <div className={`${styles.iconButtonContainer} ${className}`}>
         <a href="https://github.com/jhahn678" target='_blank'>
             <IconButton 
-            // small={maxWidth1050 ? true : false}
             icon={<IoLogoGithub size={32} color={'var(--orangeLight)'}/>}
             />
         </a>
         <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank'>
             <IconButton 
-            // small={maxWidth1050 ? true : false}
             icon={<IoLogoLinkedin size={32} color={'var(--orangeLight)'}/>}
             />
         </a>
         <IconButton 
-            // small={maxWidth1050 ? true : false}
             icon={<BsPhone size={32} color={'var(--orangeLight)'}/>} 
             onClick={handlePhone}
         />
         <a href='mailto:jhahn678@yahoo.com'>
             <IconButton 
-            // small={maxWidth1050 ? true : false}
             icon={<BsEnvelope size={32} color={'var(--orangeLight)'}/>}
             />
         </a>
