@@ -4,8 +4,12 @@ import { MantineProvider } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import Footer from '../components/layout/footer/Footer';
 import Modal from '../components/modal/Modal';
+import { useScrollState } from '../hooks/useScrollState';
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  useScrollState()
+
   return (
      <MantineProvider
         withGlobalStyles
