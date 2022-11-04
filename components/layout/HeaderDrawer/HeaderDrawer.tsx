@@ -40,63 +40,76 @@ const HeaderDrawer = ({ breakpoint }: Props) => {
                 withCloseButton={false}
                 onClose={() => setOpened(false)} 
                 styles={{ drawer: { 
-                backgroundColor: "var(--orangeLight)", 
-                maxWidth: 500, 
-                width: "100%",
-                borderBottomRightRadius: minWidth380 ? 200 : 0
+                    backgroundColor: "var(--black)", 
+                    maxWidth: 500, 
+                    width: "100%",
+                    borderWidth: 0,
+                    borderRightWidth: 5,
+                    borderBottomWidth: 5,
+                    borderStyle: 'solid',
+                    borderColor: 'var(--orange)',
+                    borderBottomRightRadius: minWidth380 ? 200 : 0,
+                    filter: 'var(--orangeDropShadow)'
                 }}}
             >
                 <div className={styles.drawerHeader}>
                     <PlanetSvg className={styles.planet} onClick={() => router.push('/')}/>
                     <div className={styles.menuClose} onClick={() => setOpened(false)}>
-                        <IoClose size={40} color={'var(--black)'}/>
+                        <IoClose size={40} color={'var(--orangeLight)'}/>
                     </div>
                 </div>
-                <Link href={'/'}>
-                    <motion.p 
-                        className={styles.menuItem}
-                        animate={{ 
-                            color: router.pathname === '/' ? 'var(--orange)' : 'var(--black)',
-                            borderBottomColor: router.pathname === '/' ? 'var(--orange)' : 'var(--black)'
-                        }}
-                    >Home</motion.p>
-                </Link>
-                <Link href={'/project'}>
-                    <motion.p 
-                        className={styles.menuItem}
-                        animate={{ 
-                            color: router.pathname === '/project' ? 'var(--orange)' : 'var(--black)',
-                            borderBottomColor: router.pathname === '/project' ? 'var(--orange)' : 'var(--black)'
-                        }}
-                    >Projects</motion.p>
-                </Link>
-                <Link href={'/skills'}>
-                    <motion.p 
-                        className={styles.menuItem}
-                        animate={{
-                            color: router.pathname === '/skills' ? 'var(--orange)' : 'var(--black)',
-                            borderBottomColor: router.pathname === '/skills' ? 'var(--orange)' : 'var(--black)'
-                        }}
-                    >Skills</motion.p>
-                </Link>
-                <Link href={'/contact'}>
-                    <motion.p 
-                        className={styles.menuItem}
-                        animate={{
-                            color: router.pathname === '/contact' ? 'var(--orange)' : 'var(--black)',
-                            borderBottomColor: router.pathname === '/contact' ? 'var(--orange)' : 'var(--black)'
-                        }}
-                    >Contact</motion.p>
-                </Link>
-                <Link href={'/about'}>
-                    <motion.p 
-                        className={styles.menuItem}
-                        animate={{
-                            color: router.pathname === '/about' ? 'var(--orange)' : 'var(--black)',
-                            borderBottomColor: router.pathname === '/about' ? 'var(--orange)' : 'var(--black)'
-                        }}
-                    >About</motion.p>
-                </Link>
+                <ul style={{ padding: 0, margin: 0 }}>
+                    <Link href={'/'}>
+                        <motion.li 
+                            className={styles.menuItem}
+                            whileHover={{ x: 8 }}
+                            animate={{ 
+                                color: router.pathname === '/' ? 'var(--orangeLight)' : 'var(--orange)',
+                                borderBottomColor: router.pathname === '/' ? 'var(--orangeLight)' : undefined
+                            }}
+                        >Home</motion.li>
+                    </Link>
+                    <Link href={'/project'}>
+                        <motion.li 
+                            className={styles.menuItem}
+                            whileHover={{ x: 8 }}
+                            animate={{ 
+                                color: router.pathname === '/project' ? 'var(--orangeLight)' : 'var(--orange)',
+                                borderBottomColor: router.pathname === '/project' ? 'var(--orangeLight)' : undefined
+                            }}
+                        >Projects</motion.li>
+                    </Link>
+                    <Link href={'/skills'}>
+                        <motion.li 
+                            className={styles.menuItem}
+                            whileHover={{ x: 8 }}
+                            animate={{
+                                color: router.pathname === '/skills' ? 'var(--orangeLight)' : 'var(--orange)',
+                                borderBottomColor: router.pathname === '/skills' ? 'var(--orangeLight)' : undefined
+                            }}
+                        >Skills</motion.li>
+                    </Link>
+                    <Link href={'/contact'}>
+                        <motion.li 
+                            className={styles.menuItem}
+                            whileHover={{ x: 8 }}
+                            animate={{
+                                color: router.pathname === '/contact' ? 'var(--orangeLight)' : 'var(--orange)',
+                                borderBottomColor: router.pathname === '/contact' ? 'var(--orangeLight)' : undefined
+                            }}
+                        >Contact</motion.li>
+                    </Link>
+                    <Link href={'/about'}>
+                        <motion.li 
+                            className={styles.menuItem}
+                            whileHover={{ x: 8 }}
+                            animate={{
+                                color: router.pathname === '/about' ? 'var(--orangeLight)' : 'var(--orange)',
+                                borderBottomColor: router.pathname === '/about' ? 'var(--orangeLight)' : undefined
+                            }}
+                        >About</motion.li>
+                    </Link>
+                </ul>
                 <div className={styles.drawerIconContainer}>
                 <a href="https://github.com/jhahn678" target='_blank'>
                     <IconButton icon={<IoLogoGithub size={32} color={'var(--orangeLight)'}/>}/>
