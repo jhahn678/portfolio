@@ -16,12 +16,10 @@ export const useScrollState = () => {
         })
 
         const onRouteChangeStart = () => {
-            console.log({ [router.asPath]: window.scrollY })
             setScrollState(x => ({ ...x, [router.asPath]: window.scrollY }))
         }
 
         const onRouteChangeComplete = (url: string) => {
-            console.log({ navigatingBack: navigatingBack.current, state: scrollState[url], url: url})
             if(navigatingBack.current && scrollState[url]){
                 window.scroll({
                     top: scrollState[url],

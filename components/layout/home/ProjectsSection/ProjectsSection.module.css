@@ -17,7 +17,6 @@
 .headerText {
     margin: 0;
     font-size: 48px;
-    margin-left: 24px;
     color: var(--white);
     background-color: var(--black);
 }
@@ -48,7 +47,7 @@
         padding-right: 16px;
     }
     .header{
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
     .filterSection{
         margin: 24px 16px 0px;
@@ -61,15 +60,10 @@
     .header {
         padding-left: 16px
     }
-    .planet{
-        height: 64px;
-        width: 64px;
-    }
     .headerText {
         background-color: var(--black);
         border-radius: 100%;
         font-size: 36px;
-        margin-left: 16px;
     }
 }
 

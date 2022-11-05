@@ -54,8 +54,8 @@
 
 @media screen and (max-width: 1050px) {
     .planet {
-        height: 72px;
-        width: 72px;
+        height: 72px !important;
+        width: 72px !important;
     }
 
     .links {
@@ -72,10 +72,9 @@
         display: flex;
         justify-content: space-between;
     }
-
     .planet {
-        height: 64px;
-        width: 64px;
+        height: 64px !important;
+        width: 64px !important;
     }
 }
 

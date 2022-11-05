@@ -27,8 +27,7 @@ const ProjectsSection = ({ projects, style }: Props) => {
     return (
         <section className={styles.container} style={style}>
             <header className={styles.header}>
-                <Link href={'/'}><div><PlanetSvg className={styles.planet}/></div></Link>
-                <h1 className={styles.headerText}>My Projects</h1>
+                <h1 className={styles.headerText}>Latest <span className='text-gradient'>Projects</span></h1>
             </header>
             <LayoutGroup>
                 <FilterBar 

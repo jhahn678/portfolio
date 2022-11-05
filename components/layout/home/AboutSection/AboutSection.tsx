@@ -4,6 +4,7 @@ import Image from "next/image";
 import Card from "../../../cards/Card/Card";
 import { BiMessageDetail } from "react-icons/bi";
 import { useMediaQuery } from "@mantine/hooks";
+import Link from "next/link";
 
 const AboutSection = () => {
     const breakpoint1050 = useMediaQuery('(max-width: 1050px)')
@@ -25,10 +26,15 @@ const AboutSection = () => {
                 </div>
                 <div className={styles.right}>
                     <figure className={styles.figureOne}>
-                        <Image src={'https://julian-hahn-portfolio.s3.amazonaws.com/DSC02777.jpg'} 
-                            layout='fill' objectFit="cover" style={{ borderRadius: 16 }}
-                            alt={'A picture of me in Grand Teton National Park'}/>
-                        <figcaption className={styles.figureOneCaption}>Me in Grand Teton National Park - September 2021</figcaption>
+                        <div className={styles.figureImage}>
+                            <Image 
+                                src={'https://julian-hahn-portfolio.s3.amazonaws.com/DSC02777.jpg'} 
+                                alt={'A picture of me in Grand Teton National Park'} 
+                                layout='responsive' height={533} width={800} 
+                                style={{ borderRadius: 12 }}
+                            />
+                        </div>
+                        <figcaption className={styles.figureCaption}>Me in Grand Teton National Park - September 2021</figcaption>
                     </figure>
                 </div>
                 <div className={styles.divider}/>
@@ -57,12 +63,12 @@ const AboutSection = () => {
                         </p>
                     </div>
                     {!breakpoint1050 && <Image src={'/arrow-two.svg'} height={220} width={220} className={styles.arrow}/>}
-                    <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'}>
+                    <Link href={'/contact'}>
                         <Card className={styles.card} whileHover={{ scale: 1.05 }} whileTap={{ scale: .98 }}>
                             <h2 className={styles.cardHeader}>Contact Me</h2>
                             <BiMessageDetail size={36}/>
                         </Card>
-                    </a>
+                    </Link>
             </div>
         </section>
 );

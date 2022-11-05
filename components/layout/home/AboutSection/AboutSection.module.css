@@ -5,7 +5,7 @@
 .main{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 24px;
+    padding: 0 16px 24px;
     row-gap: 80px;
     column-gap: 50px;
     background-image: url('/background-one.svg');
@@ -69,18 +69,16 @@
     background-color: var(--black);
 }
 .figureOne {
-    position: relative;
-    height: 400px;
     width: 100%;
-    margin: 0;
     max-width: 700px;
     border-radius: 16px;
+    margin: 0;
     filter: drop-shadow(0px 1px 8px rgba(255, 255, 255, .3));
 }
-.figureOneCaption {
+.figureCaption {
     color: var(--white);
-    position: absolute;
-    bottom: -48px;
+    margin-top: 16px;
+    font-weight: 500;
 }
 .figureTwo{
     margin: 0;
@@ -128,11 +126,12 @@
 .card {
     display: flex;
     align-items: center;
-    padding-right: 40px;
+    padding: 24px 48px !important;
 }
 
 .cardHeader {
     margin: 16px;
+    margin-left: 0;
 }
 
 .arrow {
@@ -163,8 +162,7 @@
         display: block;
         height: 5px;
         width: 100%;
-        max-width: 800px;
-        margin-top: 15vh;
+        margin-top: 10vh;
         margin-bottom: 7vh;
         background-color: var(--orangeLight);
     }
@@ -180,9 +178,8 @@
     .headingRight{
         text-align: center;
     }
-    .figureOne {
-        max-width: 700px;
-        margin-top: 10vh;
+    .figureOne{
+        margin-top: 5vh;
     }
 }
 
@@ -207,16 +204,18 @@
     .divider{
         display: none;
     }
-    .figureOne{
-        margin-bottom: 15vh;
+    .headingRight,
+    .headingLeft {
+        align-self: flex-start;
+    }
+    .textRight, .textLeft {
+        text-align: left;
+    }
+    .figureOne {
+        margin-bottom: 5vh;
     }
     .figureTwo{
         display: none;
-    }
-}
-@media screen and (max-width: 550px) {
-    .figureOne {
-        height: 250px;
     }
 }
 

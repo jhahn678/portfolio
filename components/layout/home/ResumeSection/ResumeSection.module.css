@@ -90,6 +90,7 @@
 }
 .cardHeader{
     margin: 16px;
+    margin-left: 0;
 }
 
 @media screen and (max-width: 1000px) {
@@ -130,6 +131,14 @@
     }
     .card{
         margin-top: 32px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .heading {
+        align-self: flex-start;
+    }
+    .text {
+        text-align: left;
     }
 }
 

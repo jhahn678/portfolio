@@ -5,6 +5,28 @@ import Card from "../../../cards/Card/Card";
 import TechCard from "../../../cards/TechCard/TechCard";
 import styles from './ResumeSection.module.css'
 import { HiOutlineDownload } from 'react-icons/hi'
+import { motion, Variants } from 'framer-motion'
+
+const containerVariants: Variants = {
+    initial: {
+        opacity: 0
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            staggerChildren: .1
+        }
+    }
+}
+
+const cardVariants: Variants = {
+    initial: {
+        scale: 0
+    },
+    animate: {
+        scale: 1
+    }
+}
 
 const ResumeSection = () => {
 
@@ -15,44 +37,50 @@ const ResumeSection = () => {
   return(
     <section className={styles.container}>
         <div className={styles.skills}>
-            <div className={styles.left}>
+            <motion.div 
+                className={styles.left} 
+                initial={'initial'} 
+                whileInView={'animate'} 
+                viewport={{ once: true }} 
+                variants={containerVariants}
+            >
                 <div className={styles.cardRow}>
-                    <TechCard label={"AWS"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"React Native"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"TypeScript"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"AWS"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"React Native"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"TypeScript"} size={breakpoint1050 ? 40 : undefined}/>
                 </div>
                 <div className={styles.cardRow}>
-                    <TechCard label={"Google Cloud"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"Apollo"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"PostgreSQL"} size={breakpoint1050 ? 40 : undefined}/>
-                    {!breakpoint400 && <TechCard label={"MongoDB"} size={breakpoint1050 ? 40 : undefined}/>}
+                    <TechCard variants={cardVariants} label={"Google Cloud"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"Apollo"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"PostgreSQL"} size={breakpoint1050 ? 40 : undefined}/>
+                    {!breakpoint400 && <TechCard variants={cardVariants} label={"MongoDB"} size={breakpoint1050 ? 40 : undefined}/>}
                 </div>
                 <div className={styles.cardRow}>
-                    <TechCard label={"Mapbox"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"Contentful"} size={breakpoint1050 ? 40 : undefined}/>
-                    {!breakpoint525 && <TechCard label={"HTML & CSS"} size={breakpoint1050 ? 40 : undefined}/>}
-                    <TechCard label={"Redis"} size={breakpoint1050 ? 40 : undefined}/>
-                    {!breakpoint400 && <TechCard label={"Redux"} size={breakpoint1050 ? 40 : undefined}/>}
+                    <TechCard variants={cardVariants} label={"Mapbox"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"Contentful"} size={breakpoint1050 ? 40 : undefined}/>
+                    {!breakpoint525 && <TechCard variants={cardVariants} label={"HTML & CSS"} size={breakpoint1050 ? 40 : undefined}/>}
+                    <TechCard variants={cardVariants} label={"Redis"} size={breakpoint1050 ? 40 : undefined}/>
+                    {!breakpoint400 && <TechCard variants={cardVariants} label={"Redux"} size={breakpoint1050 ? 40 : undefined}/>}
                 </div>
                 <div className={styles.cardRow}>
-                    <TechCard label={"Node"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"Jest"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"Pandas"} size={breakpoint1050 ? 40 : undefined}/>
-                    {!breakpoint400 && <TechCard label={"Expo"} size={breakpoint1050 ? 40 : undefined}/>}
+                    <TechCard variants={cardVariants} label={"Node"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"Jest"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"Pandas"} size={breakpoint1050 ? 40 : undefined}/>
+                    {!breakpoint400 && <TechCard variants={cardVariants} label={"Expo"} size={breakpoint1050 ? 40 : undefined}/>}
                 </div>
                 {breakpoint400 &&
                     <div className={styles.cardRow}>
-                        <TechCard label={"Redux"} size={breakpoint1050 ? 40 : undefined}/>
-                        <TechCard label={"MongoDB"} size={breakpoint1050 ? 40 : undefined}/>
-                        <TechCard label={"Expo"} size={breakpoint1050 ? 40 : undefined}/>
+                        <TechCard variants={cardVariants} label={"Redux"} size={breakpoint1050 ? 40 : undefined}/>
+                        <TechCard variants={cardVariants} label={"MongoDB"} size={breakpoint1050 ? 40 : undefined}/>
+                        <TechCard variants={cardVariants} label={"Expo"} size={breakpoint1050 ? 40 : undefined}/>
                     </div>
                 }
                 <div className={styles.cardRow}>
-                    <TechCard label={"GraphQL"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"Firebase"} size={breakpoint1050 ? 40 : undefined}/>
-                    <TechCard label={"React-Query"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"GraphQL"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"Firebase"} size={breakpoint1050 ? 40 : undefined}/>
+                    <TechCard variants={cardVariants} label={"React-Query"} size={breakpoint1050 ? 40 : undefined}/>
                 </div>
-            </div>
+            </motion.div>
             <div className={styles.right}>
                 <h3 className={styles.heading}>Some of my <span className="text-gradient">skills.</span></h3>
                 <p className={styles.text}>
