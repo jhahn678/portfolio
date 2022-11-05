@@ -13,16 +13,16 @@ const AboutSection = () => {
             <div className={styles.main}>
                 <div className={styles.left}>
                     <h3 className={styles.headingLeft}>A little about <span className="text-gradient">me.</span></h3>
-                    <p className={styles.textLeft}>
+                    <p className={styles.textLeft}>{`
                         I’m Julian Hahn, a 25-year-old, self-taught, full-stack developer with 
                         about two years of experience. Most of that time was in the JavaScript 
                         ecosystem, but I’ve also used languages such as Python, Java, and Visual C++. 
-                    </p>
-                    <p className={styles.textLeft}>
+                    `}</p>
+                    <p className={styles.textLeft}>{`
                         I’ve designed a wide-variety of projects; Ecommerce systems, Social-media 
                         applications, GeoJSON API’s, to my current project and start-up, 
                         Heron, a native mobile application.
-                    </p>
+                    `}</p>
                 </div>
                 <div className={styles.right}>
                     <figure className={styles.figureOne}>
@@ -47,12 +47,12 @@ const AboutSection = () => {
                 </div>
                 <div className={styles.right}>
                     <h3 className={styles.headingRight}>Outside of work.</h3>
-                    <p className={styles.textRight}>
+                    <p className={styles.textRight}>{`
                         When I’m not honing my skills as a developer, I spend most of my time running, 
                         fishing, climbing, kayaking, backbacking, and anything else active that takes 
                         place outside! I also love landscape photography. I’ve spent several summers 
                         over the past few years taking long backpacking/photography trips. 
-                    </p>
+                    `}</p>
                 </div>
             </div>
             <div className={styles.contact}>

@@ -41,7 +41,7 @@ const ContactPage: NextPage = () => {
                     <div className={styles.leftContent}>
                         <h3 className={styles.subtitle}>Let's get in Touch</h3>
                         <p className={styles.text}>Have a question? Interested in working together?</p>
-                        <p className={styles.text}>Submit a message and I’ll get back to you as soon as possible!</p>
+                        <p className={styles.text}>{"Submit a message and I’ll get back to you as soon as possible!"}</p>
                     </div>
                 </section>
                 <section className={styles.right}>
