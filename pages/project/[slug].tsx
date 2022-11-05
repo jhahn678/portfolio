@@ -11,7 +11,7 @@ import { GrAppleAppStore } from 'react-icons/gr'
 import Line from '../../components/layout/line/Line'
 import axios from '../../config/axios'
 import { documentToReactComponents,  } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, AssetLinkBlock, Document } from '@contentful/rich-text-types'
+import { BLOCKS, Document } from '@contentful/rich-text-types'
 
 const Project: NextPage<IProjectRichText> = (props) => {
 

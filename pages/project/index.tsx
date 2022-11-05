@@ -3,8 +3,6 @@ import { GetStaticProps, NextPage } from "next/types";
 import axios from "../../config/axios";
 import { IProject } from "../../types/Project";
 import styles from '../../styles/MyProjects.module.css'
-import PlanetSvg from "../../components/svg/PlanetSvg/PlanetSvg";
-import Link from "next/link";
 import { LayoutGroup, motion } from "framer-motion";
 import FilterBar from "../../components/inputs/FilterBar/FilterBar";
 import ProjectCard from "../../components/cards/ProjectCard/ProjectCard";
