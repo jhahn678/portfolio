@@ -74,7 +74,7 @@ const SkillsPage: NextPage = () => {
                     </p>
                 </div>
                 {!breakpoint1050 && <Image src={'/arrow.svg'} height={150} width={170}/>}
-                <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'}>
+                <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'} rel="noreferrer">
                     <Card className={styles.card} whileHover={{ scale: 1.05 }} whileTap={{ scale: .98 }}>
                         <h2 className={styles.cardHeader}>Download Resume</h2>
                         <HiOutlineDownload size={36}/>

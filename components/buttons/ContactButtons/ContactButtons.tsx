@@ -17,12 +17,12 @@ const ContactButtons = ({ className }: Props) => {
     
   return (
     <div className={`${styles.iconButtonContainer} ${className}`}>
-        <a href="https://github.com/jhahn678" target='_blank'>
+        <a href="https://github.com/jhahn678" target='_blank' rel="noreferrer">
             <IconButton 
             icon={<IoLogoGithub size={32} color={'var(--orangeLight)'}/>}
             />
         </a>
-        <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank'>
+        <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank' rel="noreferrer">
             <IconButton 
             icon={<IoLogoLinkedin size={32} color={'var(--orangeLight)'}/>}
             />

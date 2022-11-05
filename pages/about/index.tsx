@@ -66,7 +66,7 @@ const AboutPage = () => {
                         </p>
                     </div>
                     {!breakpoint1050 && <Image src={'/arrow-two.svg'} height={220} width={220} className={styles.arrow}/>}
-                    <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'}>
+                    <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'} rel="noreferrer">
                         <Card className={styles.card} whileHover={{ scale: 1.05 }} whileTap={{ scale: .98 }}>
                             <h2 className={styles.cardHeader}>Contact Me</h2>
                             <BiMessageDetail size={36}/>

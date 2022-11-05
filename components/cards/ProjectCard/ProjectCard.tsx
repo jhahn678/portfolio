@@ -40,7 +40,7 @@ const ProjectCard = ({ data }: Props) => {
       <motion.div className={styles.heading} animate={{ height: hovering ? undefined : 60 }}>
         <div className={styles.row}>
           <motion.h3 className={styles.title}>{data.title}</motion.h3>
-          <motion.a whileHover={{ scale: 1.2 }} href={data.github} target='_blank' style={{ height: 28 }}>
+          <motion.a whileHover={{ scale: 1.2 }} href={data.github} target='_blank' rel="noreferrer" style={{ height: 28 }}>
             <IoLogoGithub color={'var(--black)'} size={28}/>
           </motion.a>
         </div>

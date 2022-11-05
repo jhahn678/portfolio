@@ -4,7 +4,7 @@ import styles from './IconButton.module.css'
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & MotionProps & {
     icon: JSX.Element,
-    small: boolean
+    small?: boolean
 }
 
 const IconButton = ({ icon, className, small=false, ...props}: Props) => {

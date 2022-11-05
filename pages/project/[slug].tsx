@@ -50,27 +50,27 @@ const Project: NextPage<IProjectRichText> = (props) => {
             <div className={styles.typeGroup}>
               <h3 className={styles.type}>{props.type}</h3>
               <div className={styles.buttons}>
-                <a href={props.github || undefined} target='_blank'>
+                <a href={props.github || undefined} target='_blank' rel="noreferrer">
                     <IconButton small={true} 
                       icon={<IoLogoGithub size={20} color={'var(--orangeLight)'}/>}
                     />
                 </a>
                 {props.web &&
-                  <a href={props.web} target='_blank'>
+                  <a href={props.web} target='_blank' rel="noreferrer">
                     <IconButton small={true} 
                       icon={<MdWeb size={20} color={'var(--orangeLight)'}/>}
                     />
                   </a>
                 }
                 {props.apple && 
-                  <a href={props.apple} target='_blank'>
+                  <a href={props.apple} target='_blank' rel="noreferrer">
                       <IconButton small={true} 
                         icon={<GrAppleAppStore size={20} color={'var(--orangeLight)'}/>}
                       />
                   </a>
                 }
                 {props.playstore && 
-                  <a href={props.playstore} target='_blank'>
+                  <a href={props.playstore} target='_blank' rel="noreferrer">
                     <IconButton small={true} 
                       icon={<IoLogoGooglePlaystore size={20} color={'var(--orangeLight)'} style={{ transform: 'translate(2px, 2px)' }}/>}
                     />

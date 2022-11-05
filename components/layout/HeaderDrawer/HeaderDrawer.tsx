@@ -11,7 +11,6 @@ import { IoClose, IoLogoGithub, IoLogoLinkedin } from "react-icons/io5";
 import { ModalType, useModalStore } from "../../../hooks/useModalStore";
 import IconButton from "../../buttons/IconButton/IconButton";
 import PlanetSvg from '../../svg/PlanetSvg/PlanetSvg';
-import { borderBottomColor } from '@mui/system';
 
 interface Props{
     breakpoint: number
@@ -111,10 +110,10 @@ const HeaderDrawer = ({ breakpoint }: Props) => {
                     </Link>
                 </ul>
                 <div className={styles.drawerIconContainer}>
-                <a href="https://github.com/jhahn678" target='_blank'>
+                <a href="https://github.com/jhahn678" target='_blank' rel="noreferrer">
                     <IconButton icon={<IoLogoGithub size={32} color={'var(--orangeLight)'}/>}/>
                 </a>
-                <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank'>
+                <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank' rel="noreferrer">
                     <IconButton icon={<IoLogoLinkedin size={32} color={'var(--orangeLight)'}/>}/>
                 </a>
                 <IconButton icon={<BsPhone size={32} color={'var(--orangeLight)'}/>} onClick={handlePhone}/>

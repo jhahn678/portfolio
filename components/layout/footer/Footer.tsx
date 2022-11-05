@@ -14,7 +14,6 @@ const Footer = () => {
   const handlePhone = () => setModal(ModalType.Contact)
 
   const max1100 =  useMediaQuery('(max-width:1100px)')
-  // const max400 = useMediaQuery('(max-width:400px)')
 
   return (
     <div className={styles.container}>
@@ -28,10 +27,10 @@ const Footer = () => {
           height={max1100 ? 5 : 100} width={max1100 ? 250 : 5}
         />
         <div className={styles.buttons}>
-          <a href="https://github.com/jhahn678" target='_blank'>
+          <a href="https://github.com/jhahn678" target='_blank' rel="noreferrer">
             <IconButton icon={<IoLogoGithub size={32} color={'var(--orangeLight)'}/>}/>
           </a>
-          <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank'>
+          <a href="https://www.linkedin.com/in/julian-hahn-440527232/" target='_blank' rel="noreferrer">
             <IconButton icon={<IoLogoLinkedin size={32} color={'var(--orangeLight)'}/>}/>
           </a>
           <IconButton icon={<BsPhone size={32} color={'var(--orangeLight)'}/>} onClick={handlePhone}/>
