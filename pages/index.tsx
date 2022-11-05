@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const res = await axios.post<ProjectsRes>(process.env.CONTENTFUL_GRAPH_URL!, {
     query: "query{projectCollection{items{sys{id},title,type,description,thumbnail,web,github,apple,playstore,stack,slug,tags}}}"
   }, {
-    headers: { "Authorization": `Bearer ${process.env.CONTENT_PREVIEW_ACCESS_TOKEN}` }
+    headers: { "Authorization": `Bearer ${process.env.CONTENT_PREVIEW_ACCESS_TOKEN!}` }
   })
   const { items: projects } = res.data.data.projectCollection;
   return {
