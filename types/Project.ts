@@ -1,3 +1,5 @@
+import { Document } from '@contentful/rich-text-types'
+
 export interface IProject {
   sys: {
     id: string
@@ -13,6 +15,25 @@ export interface IProject {
   stack: StackItem[],
   tags: string[]
   slug: string
+}
+
+export interface IProjectRichText extends IProject{
+  body: {
+    json: Document
+    links: {
+      assets: {
+        block: {
+          sys: {
+            id: string
+          }
+          description: string
+          height: number
+          width: number
+          url: string
+        }[]
+      }
+    }
+  }
 }
 
 export type StackItem = 

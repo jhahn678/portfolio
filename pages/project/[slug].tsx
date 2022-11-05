@@ -4,58 +4,132 @@ import Image from 'next/image'
 import TechCard from '../../components/cards/TechCard/TechCard'
 import styles from '../../styles/Project.module.css'
 import { MdWeb } from 'react-icons/md'
-import { IProject, StackItem } from '../../types/Project'
+import { IProject, IProjectRichText, StackItem } from '../../types/Project'
 import IconButton from '../../components/buttons/IconButton/IconButton'
 import { IoLogoGithub, IoLogoGooglePlaystore } from 'react-icons/io5'
 import { GrAppleAppStore } from 'react-icons/gr'
 import Line from '../../components/layout/line/Line'
 import axios from '../../config/axios'
+import { documentToReactComponents,  } from '@contentful/rich-text-react-renderer'
+import { BLOCKS, AssetLinkBlock, Document } from '@contentful/rich-text-types'
 
-const Project: NextPage<IProject> = (props) => {
+const Project: NextPage<IProjectRichText> = (props) => {
+
+  const splitNodes = (nodes: IProjectRichText['body']['json']): Document[]  => {
+    const docs: Document[] = [];
+    const indexes = nodes.content.map((x, index) => ({ ...x, index }))
+    const sections = indexes.filter(x => x.nodeType === 'heading-3')
+    let index = 0;
+    for(let section of sections){
+      console.log(section.index)
+      if(index === sections.length - 1){
+        docs.push({
+          nodeType: BLOCKS.DOCUMENT,
+          data: {},
+          content: nodes.content.slice(section.index)
+        })
+      }else{
+        docs.push({
+          nodeType: BLOCKS.DOCUMENT,
+          data: {},
+          content: nodes.content.slice(section.index, sections[index + 1].index)
+        })
+      }
+      index ++;
+    }
+    return docs;
+  }
 
   return (
-    <div className={styles.container}>
+    <div className={styles.page}>
       <Head><title>{props.title} -- Julian Hahn</title></Head>
-      <section className={styles.left}>
-        <div className='fc'>
-          <h1 className={styles.title}>{props.title}</h1>
-          <div className={styles.typeGroup}>
-            <h3 className={styles.type}>{props.type}</h3>
-            <div className={styles.buttons}>
-              <a href={props.github || undefined} target='_blank'>
-                  <IconButton small={true} icon={<IoLogoGithub size={24} color={'var(--orangeLight)'}/>}/>
-              </a>
-              {props.web &&
-                <a href={props.web} target='_blank'>
-                  <IconButton small={true} icon={<MdWeb size={24} color={'var(--orangeLight)'}/>}/>
+      <section className={styles.container}>
+        <div className={styles.left}>
+          <div className='fc'>
+            <h1 className={styles.title}>{props.title}</h1>
+            <div className={styles.typeGroup}>
+              <h3 className={styles.type}>{props.type}</h3>
+              <div className={styles.buttons}>
+                <a href={props.github || undefined} target='_blank'>
+                    <IconButton small={true} 
+                      icon={<IoLogoGithub size={20} color={'var(--orangeLight)'}/>}
+                    />
                 </a>
-              }
-              {props.apple && 
-                <a href={props.apple} target='_blank'>
-                    <IconButton small={true} icon={<GrAppleAppStore size={24} color={'var(--orangeLight)'}/>}/>
-                </a>
-              }
-              {props.playstore && 
-                <a href={props.playstore} target='_blank'>
-                  <IconButton small={true} icon={<IoLogoGooglePlaystore size={24} color={'var(--orangeLight)'} style={{ transform: 'translate(2px, 2px)' }}/>}/>
-                </a>
-              }
+                {props.web &&
+                  <a href={props.web} target='_blank'>
+                    <IconButton small={true} 
+                      icon={<MdWeb size={20} color={'var(--orangeLight)'}/>}
+                    />
+                  </a>
+                }
+                {props.apple && 
+                  <a href={props.apple} target='_blank'>
+                      <IconButton small={true} 
+                        icon={<GrAppleAppStore size={20} color={'var(--orangeLight)'}/>}
+                      />
+                  </a>
+                }
+                {props.playstore && 
+                  <a href={props.playstore} target='_blank'>
+                    <IconButton small={true} 
+                      icon={<IoLogoGooglePlaystore size={20} color={'var(--orangeLight)'} style={{ transform: 'translate(2px, 2px)' }}/>}
+                    />
+                  </a>
+                }
+              </div>
+            </div>
+            <Line height={3} width={'65%'} color={'var(--orangeLight)'} className={styles.hline}/>
+            <p className={styles.description}>{props.description}</p>
+            <Line height={3} width={'85%'} color={'var(--orangeLight)'} className={styles.hline}/>
+            <h4 className={styles.subtitle}>Technologies</h4>
+            <div className={styles.techContainer}>
+              { props.stack.map(x => <TechCard key={x} label={x as StackItem} size={50}/>)}
             </div>
           </div>
-          <Line height={3} width={'65%'} color={'var(--orangeLight)'} className={styles.hline}/>
-          <p className={styles.description}>{props.description}</p>
-          <Line height={3} width={'85%'} color={'var(--orangeLight)'} className={styles.hline}/>
-          <h4 className={styles.subtitle}>Technologies</h4>
-          <div className={styles.techContainer}>
-            { props.stack.map(x => <TechCard key={x} label={x as StackItem} size={50}/>)}
+        </div>
+        <div className={styles.right}>
+          <div className={styles.image}>
+            <Image src={props.thumbnail} layout='fill' objectFit='cover'/>
           </div>
         </div>
       </section>
-      <section className={styles.right}>
-        <div className={styles.image}>
-          <Image src={props.thumbnail} layout='fill' objectFit='cover'/>
-        </div>
-      </section>
+      <main className={styles.content}>
+        {
+          splitNodes(props.body.json).map((x, index) => {
+            return (
+              <div className={styles.contentSection} key={index}>
+                <div className={styles.contentLeft}>{
+                  documentToReactComponents({
+                    nodeType: BLOCKS.DOCUMENT,
+                    data: {},
+                    content: x.content.slice(0,x.content.length - 1)})
+                }</div>
+                <div className={styles.contentRight}>{
+                  documentToReactComponents({
+                    nodeType: BLOCKS.DOCUMENT,
+                    data: {},
+                    content: x.content.slice(x.content.length - 1,)},{
+                      renderNode: { 
+                        [BLOCKS.EMBEDDED_ASSET]: (node) => {
+                          const { id } = node.data.target.sys;
+                          const asset = props.body.links.assets.block.find(x => x.sys.id === id)!
+                          return (
+                            <figure className={styles.contentFigure}>
+                              <div key={asset.sys.id} className={styles.contentImage}>
+                                <Image src={asset.url} alt={asset.description} layout='responsive' height={asset.height} width={asset.width} style={{ borderRadius: 12 }}/>
+                              </div>
+                              <p className={styles.contentImageCaption}>{asset.description}</p>
+                            </figure>
+                          )
+                        }
+                      }
+                    })
+                }</div>
+              </div>
+            )
+          })
+        }
+      </main>
     </div>
   )
 }
@@ -80,13 +154,50 @@ export const getStaticPaths: GetStaticPaths = async () => {
 interface PropsRes{
   data: {
     projectCollection: {
-      items: IProject[]
+      items: IProjectRichText[]
     }
   }
 }
 
 export const getStaticProps: GetStaticProps<IProject, { slug: string }> = async ({ params }) => {
-  const query = `query{projectCollection(where:{slug:"${params?.slug}"}){items{sys{id},title,type,description,thumbnail,web,github,apple,playstore,stack,tags,slug,body{json}}}}`
+  const query = `
+    query{
+      projectCollection(where:{slug:"${params?.slug}"}, limit: 1){
+        items{
+          sys{
+            id
+          },
+          title,
+          type,
+          description,
+          thumbnail,
+          web,
+          github,
+          apple,
+          playstore,
+          stack,
+          tags,
+          slug,
+          body{
+            json,
+            links{
+              assets{
+                block{
+                  sys{
+                    id
+                  }
+                  description
+                  height
+                  width
+                  url
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `
   const res = await axios.post<PropsRes>(process.env.CONTENTFUL_GRAPH_URL!, { query })
   return { props: { ...res.data.data.projectCollection.items[0] } }
 }
