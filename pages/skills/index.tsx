@@ -58,12 +58,12 @@ const SkillsPage: NextPage = () => {
                 </div>
                 <div className={styles.right}>
                     <h3 className={styles.heading}>Some of my <span className='text-gradient'>skills.</span></h3>
-                    <p className={styles.text}>{`
+                    <p className={styles.text}>
                         I pride myself on being a fast and flexible learner. An opportunity 
                         to explore a new stack is an opportunity for me to broaden my horizons 
                         as a developer. These are a handful of the  technologies I currently 
-                        have experience with, but I’m always eager to dive into the deep end with more!
-                    `}</p>
+                        have experience with, but I&apos;m always eager to dive into the deep end with more!
+                    </p>
                 </div>
             </div>
             <div className={styles.resume}>
@@ -74,7 +74,7 @@ const SkillsPage: NextPage = () => {
                     </p>
                 </div>
                 {!breakpoint1050 && <Image src={'/arrow.svg'} height={150} width={170}/>}
-                <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'} rel="noreferrer">
+                <a href='https://julian-hahn-portfolio.s3.amazonaws.com/Julian-Hahn-Resume.pdf' download target={'_blank'} >
                     <Card className={styles.card} whileHover={{ scale: 1.05 }} whileTap={{ scale: .98 }}>
                         <h2 className={styles.cardHeader}>Download Resume</h2>
                         <HiOutlineDownload size={36}/>

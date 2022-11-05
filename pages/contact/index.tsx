@@ -1,7 +1,5 @@
 import type { NextPage } from "next"
 import styles from '../../styles/Contact.module.css'
-import Card from "../../components/cards/Card/Card"
-import Line from "../../components/layout/line/Line"
 import TextInput from "../../components/inputs/TextInput/TextInput"
 import ButtonFilled from "../../components/buttons/ButtonFilled/ButtonFilled"
 import TextArea from "../../components/inputs/TextArea/TextArea"
@@ -41,7 +39,7 @@ const ContactPage: NextPage = () => {
                     <div className={styles.leftContent}>
                         <h3 className={styles.subtitle}>Let's get in Touch</h3>
                         <p className={styles.text}>Have a question? Interested in working together?</p>
-                        <p className={styles.text}>{"Submit a message and I’ll get back to you as soon as possible!"}</p>
+                        <p className={styles.text}>Submit a message and I&apos;ll get back to you as soon as possible!</p>
                     </div>
                 </section>
                 <section className={styles.right}>
