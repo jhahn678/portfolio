@@ -37,7 +37,7 @@ const ContactPage: NextPage = () => {
             <main className={styles.main}>
                 <section className={styles.left}>
                     <div className={styles.leftContent}>
-                        <h3 className={styles.subtitle}>Let's get in Touch</h3>
+                        <h3 className={styles.subtitle}>Let&apos;s get in Touch</h3>
                         <p className={styles.text}>Have a question? Interested in working together?</p>
                         <p className={styles.text}>Submit a message and I&apos;ll get back to you as soon as possible!</p>
                     </div>
