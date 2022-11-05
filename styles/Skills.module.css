@@ -151,20 +151,25 @@
         margin-top: 32px;
     }
 }
+@media screen and (max-width: 600px) {
+    .heading {
+        align-self: flex-start;
+    }
+    .text {
+        text-align: left;
+    }
+}
 
 @media screen and (max-width: 400px) {
     .heading {
         font-size: 32px;
     }
-
     .resumeContent {
         max-width: 90vw;
     }
-
     .text {
         font-size: 18px;
     }
-
     .card {
         max-width: 90vw;
     }

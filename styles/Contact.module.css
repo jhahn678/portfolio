@@ -11,38 +11,45 @@
     background-position: top right;
 }
 .main{
+    max-width: 1500px;
+    margin-top: 48px;
+    column-gap: 48px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
 }
 
 .left{
-    padding-top: 48px;
+    justify-self: center;
+}
+.leftContent{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.subtitle{
+    color: var(--white);
+    font-size: 32px;
+    margin: 0px;
+    margin-bottom: 24px;
+    background-color: var(--black);
+}
+
+.text{
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--black);
+    font-weight: 500;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    border-top: 3px solid var(--orangeLight);
+    margin: 0;
+}
+.right{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.card{
-    max-width: 600px;
-    width: 80%;
-}
-
-.cardHeader{
-    color: var(--black);
-    font-size: 32px;
-    margin: 0px;
-}
-
-.cardText{
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.right{
-    padding-top: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 }
 .form{
     height: 100%;
@@ -70,9 +77,6 @@
     .container{
         padding: 16px 24px 48px;
     }
-    .card{
-        width: 95%
-    }
     .form{
         width: 95%
     }
@@ -81,25 +85,30 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
+    .container {
+        padding: 16px 16px 48px;
+    }
     .main {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .left, .right{
-        padding-top: 32px;
+    .left {
+        display: flex;
+        justify-content: center;
+    }
+    .leftContent {
+        align-items: center;
+    }
+    .text {
+        text-align: center;
+    }
+    .right{
         width: 100%;
+        margin-top: 48px;
     }
-    .card, .form {
+    .form {
         width: 100%
-    }
-}
-@media screen and (max-width: 420px) {
-    .cardHeader{
-        font-size: 28px;
-    }
-    .cardText{
-        font-size: 18px;
     }
 }

@@ -29,10 +29,15 @@ const AboutPage = () => {
                 </div>
                 <div className={styles.right}>
                     <figure className={styles.figureOne}>
-                        <Image src={'https://julian-hahn-portfolio.s3.amazonaws.com/DSC02777.jpg'} 
-                            layout='fill' objectFit="cover" style={{ borderRadius: 16 }}
-                            alt={'A picture of me in Grand Teton National Park'}/>
-                        <figcaption className={styles.figureOneCaption}>Me in Grand Teton National Park - September 2021</figcaption>
+                        <div className={styles.figureImage}>
+                            <Image 
+                                src={'https://julian-hahn-portfolio.s3.amazonaws.com/DSC02777.jpg'} 
+                                alt={'A picture of me in Grand Teton National Park'} 
+                                layout='responsive' height={533} width={800} 
+                                style={{ borderRadius: 12 }}
+                            />
+                        </div>
+                        <figcaption className={styles.figureCaption}>Me in Grand Teton National Park - September 2021</figcaption>
                     </figure>
                 </div>
                 <div className={styles.divider}/>
