@@ -148,6 +148,13 @@
     background-color: var(--black);
     width: fit-content;
 }
+.content ol {
+    margin: 0;
+    color: var(--white);
+    list-style-type: disc;
+    background-color: var(--black);
+    width: fit-content;
+}
 .content ul li ul{
     padding-left: 28px;
 }
@@ -266,6 +273,9 @@
     }
     .content ul li ul{
         padding-left: 0;
+    }
+    .content ol{
+        padding-left: 16px
     }
 }
 @media screen and (max-width: 400px) {
