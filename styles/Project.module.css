@@ -232,8 +232,14 @@
         text-align: left;
     }
     .typeGroup {
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .buttons{
+        margin-left: 0;
+        margin-top: 0;
     }
     .techContainer {
         justify-content: flex-start;
@@ -259,13 +265,6 @@
 
 }
 @media screen and (max-width: 500px) {
-    .typeGroup{
-        flex-direction: column;
-    }
-    .buttons{
-        margin-left: 0;
-        margin-top: 16px;
-    }
     .description{
         padding: 24px 0;
         font-size: 20px;
