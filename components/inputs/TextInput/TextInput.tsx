@@ -8,6 +8,9 @@ interface Props {
     type?: React.HTMLInputTypeAttribute
     value: string
     setValue: React.Dispatch<React.SetStateAction<string>>
+    error?: boolean
+    onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void
+    onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void
 }
 
 const TextInput = ({ value, setValue, type='text', ...props}: Props) => {
@@ -15,6 +18,16 @@ const TextInput = ({ value, setValue, type='text', ...props}: Props) => {
     const [active, setActive] = useState(false)
 
     const handleInput = (e: React.FormEvent<HTMLInputElement>) => setValue(e.currentTarget.value)
+
+    const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+        if(props.onFocus) props.onFocus(e);
+        setActive(true)
+    }
+
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+        if(props.onBlur) props.onBlur(e)
+        setActive(false)
+    }
 
     return (
         <motion.div className={`${styles.container} ${props.className}`}>
@@ -24,11 +37,11 @@ const TextInput = ({ value, setValue, type='text', ...props}: Props) => {
             >{props.label}</motion.span>
             <motion.input 
                 type={type}
-                className={styles.input}
+                className={`${styles.input} ${props.error ? styles.error : undefined}`}
                 onInput={handleInput}
                 value={value}
-                onFocus={() => setActive(true)} 
-                onBlur={() => setActive(false)}/>
+                onFocus={handleFocus} 
+                onBlur={handleBlur}/>
         </motion.div>
     );
 };

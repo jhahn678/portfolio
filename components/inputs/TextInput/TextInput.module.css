@@ -16,6 +16,10 @@
     border-radius: 12px;
     transition: .2s ease-out all;
 }
+.error{
+    border: 5px solid var(--red);
+    color: var(--red)
+}
 
 .label{
     color: var(--orangeLight);
