@@ -3,31 +3,63 @@ import styles from '../../styles/Contact.module.css'
 import TextInput from "../../components/inputs/TextInput/TextInput"
 import ButtonFilled from "../../components/buttons/ButtonFilled/ButtonFilled"
 import TextArea from "../../components/inputs/TextArea/TextArea"
-import { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import Modal from "../../components/modal/Modal"
-import { ModalType, useModalStore } from "../../hooks/useModalStore"
 import ContactHeader from "../../components/layout/headers/ContactHeader/ContactHeader"
+import axios from "axios"
+import { showNotification } from "@mantine/notifications"
 
 const ContactPage: NextPage = () => {
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [emailTouched, setEmailTouched] = useState(false)
     const [phone, setPhone] = useState('')
     const [message, setMessage] = useState('')
+    const [messageTouched, setMessageTouched] = useState(false)
     const [valid, setValid] = useState(false)
     const [touched, setTouched] = useState(false)
 
-    const setModal = useModalStore(store => store.setModal)
-    const handlePhone = () => setModal(ModalType.Contact)
-
     useEffect(() => { 
         setTouched(Boolean(name.length || email.length || phone.length || message.length)); 
-        setValid(Boolean(name.length && email.length && phone.length && message.length)) 
+        setValid(Boolean(name.length && email.length && email.includes('@' && '.') && message.length)) 
     },[name, email, phone, message])
 
-    const handleSubmit = () => {
-        if(valid){
+    useEffect(() => {
+        if(email.length) setEmailTouched(true)
+    },[email])
 
+    useEffect(() => {
+        if(message.length) setMessageTouched(true)
+    },[message])
+
+    const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+        e.preventDefault()
+        if(valid) {
+            try{
+                const body = { name, email, phone, message };
+                await axios.post(process.env.NEXT_PUBLIC_LAMBDA_CONTACT_URL!, body)
+                showNotification({ 
+                    title: 'Request Submitted', 
+                    message: "I'll get back to you with a response as soon as possible!", 
+                    color: 'green' 
+                })
+                setName('')
+                setEmail('')
+                setPhone('')
+                setMessage('')
+                setEmailTouched(false)
+                setMessageTouched(false)
+                setValid(false)
+                setTouched(false)
+            }catch(err){
+                console.error(err)
+                showNotification({ 
+                    title: 'Something went wrong', 
+                    message: 'Could not process request at this time. Please try email, LinkedIn, etc. instead.', 
+                    color: 'red' 
+                })
+            }
         }
     }
 
@@ -55,6 +87,7 @@ const ContactPage: NextPage = () => {
                             className={styles.input} 
                             type={'email'} 
                             value={email} 
+                            error={emailTouched && !email.includes('@' && '.')}
                             setValue={setEmail}
                         />
                         <TextInput 
@@ -67,6 +100,7 @@ const ContactPage: NextPage = () => {
                             label={'Message'} 
                             className={styles.message}
                             value={message}
+                            error={messageTouched && !message.length}
                             setValue={setMessage}
                         />
                         <ButtonFilled 

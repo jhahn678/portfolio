@@ -21,6 +21,15 @@ export interface IProjectRichText extends IProject{
   body: {
     json: Document
     links: {
+      entries: {
+        hyperlink: {
+          sys: {
+            id: string
+          }
+          slug: string
+          title: string
+        }[]
+      }
       assets: {
         block: {
           sys: {

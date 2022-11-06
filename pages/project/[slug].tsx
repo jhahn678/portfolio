@@ -11,17 +11,16 @@ import { GrAppleAppStore } from 'react-icons/gr'
 import Line from '../../components/layout/line/Line'
 import axios from '../../config/axios'
 import { documentToReactComponents,  } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, Document } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES, Document, EntryHyperlink } from '@contentful/rich-text-types'
+import Link from 'next/link'
 
 const Project: NextPage<IProjectRichText> = (props) => {
-
   const splitNodes = (nodes: IProjectRichText['body']['json']): Document[]  => {
     const docs: Document[] = [];
     const indexes = nodes.content.map((x, index) => ({ ...x, index }))
     const sections = indexes.filter(x => x.nodeType === 'heading-3')
     let index = 0;
     for(let section of sections){
-      console.log(section.index)
       if(index === sections.length - 1){
         docs.push({
           nodeType: BLOCKS.DOCUMENT,
@@ -102,7 +101,17 @@ const Project: NextPage<IProjectRichText> = (props) => {
                   documentToReactComponents({
                     nodeType: BLOCKS.DOCUMENT,
                     data: {},
-                    content: x.content.slice(0,x.content.length - 1)})
+                    content: x.content.slice(0,x.content.length - 1)},{
+                      renderNode: {
+                        [INLINES.ENTRY_HYPERLINK]: (node) => {
+                          const { id } = node.data.target.sys;
+                          const link = props.body.links.entries.hyperlink.find(x => x.sys.id === id)!
+                          return(
+                            <Link href={`/project/${link.slug}`}>{link.title}</Link>
+                          );
+                        }
+                      }
+                    })
                 }</div>
                 <div className={styles.contentRight}>{
                   documentToReactComponents({
@@ -181,6 +190,17 @@ export const getStaticProps: GetStaticProps<IProject, { slug: string }> = async 
           body{
             json,
             links{
+              entries{
+                hyperlink{
+                  sys{
+                    id
+                  }
+                  ... on Project{
+                    title
+                    slug
+                  }
+                }
+              }
               assets{
                 block{
                   sys{
