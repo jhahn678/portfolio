@@ -11,8 +11,30 @@ import { GrAppleAppStore } from 'react-icons/gr'
 import Line from '../../components/layout/line/Line'
 import axios from '../../config/axios'
 import { documentToReactComponents,  } from '@contentful/rich-text-react-renderer'
-import { BLOCKS, INLINES, Document, EntryHyperlink } from '@contentful/rich-text-types'
+import { BLOCKS, INLINES, Document } from '@contentful/rich-text-types'
 import Link from 'next/link'
+import { motion, Variants } from 'framer-motion'
+
+const containerVariants: Variants = {
+    initial: {
+        opacity: 0
+    },
+    animate: {
+        opacity: 1,
+        transition: {
+            staggerChildren: .1
+        }
+    }
+}
+
+const cardVariants: Variants = {
+    initial: {
+        scale: 0
+    },
+    animate: {
+        scale: 1
+    }
+}
 
 const Project: NextPage<IProjectRichText> = (props) => {
   const splitNodes = (nodes: IProjectRichText['body']['json']): Document[]  => {
@@ -81,9 +103,15 @@ const Project: NextPage<IProjectRichText> = (props) => {
             <p className={styles.description}>{props.description}</p>
             <Line height={3} width={'85%'} color={'var(--orangeLight)'} className={styles.hline}/>
             <h4 className={styles.subtitle}>Technologies</h4>
-            <div className={styles.techContainer}>
-              { props.stack.map(x => <TechCard key={x} label={x as StackItem} size={50}/>)}
-            </div>
+            <motion.div 
+              className={styles.techContainer} 
+              initial={'initial'} 
+              whileInView={'animate'} 
+              viewport={{ once: true }} 
+              variants={containerVariants}
+            >
+              { props.stack.map(x => <TechCard variants={cardVariants} key={x} label={x as StackItem} size={50}/>)}
+            </motion.div>
           </div>
         </div>
         <div className={styles.right}>
